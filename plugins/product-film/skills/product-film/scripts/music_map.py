@@ -11,15 +11,16 @@ Usage:
 Output: one line per bar: track time, film bar (when --in is given), energy 0-9 as a bar
 chart, and the music-only lift ratio vs the previous bar (LIFT >= 1.15, DROP <= 0.80).
 """
-import argparse, array, math, subprocess, sys
+import argparse, array, math, os, subprocess, sys
 
 SR, HOP = 11025, 256  # ~23 ms analysis frames
 
 
-def decode(path, sr=SR, lowpass=None):
-    af = ['-af', f'lowpass=f={lowpass}'] if lowpass else []
-    raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', path, *af, '-ac', '1', '-ar', str(sr), '-f', 's16le', '-'],
-                         capture_output=True, check=True).stdout
+def decode(path, sr=SR, lowpass=None, seconds=None):
+    af = ['-af', f'lowpass=f={int(lowpass)}'] if lowpass else []
+    lim = ['-t', str(float(seconds))] if seconds else []
+    raw = subprocess.run(['ffmpeg', '-v', 'error', '-protocol_whitelist', 'file', '-i', path, *lim, *af, '-ac', '1', '-ar', str(sr),
+                          '-f', 's16le', '-'], capture_output=True, check=True, timeout=600).stdout
     a = array.array('h'); a.frombytes(raw); return a
 
 
@@ -68,18 +69,31 @@ def main():
     ap.add_argument('--bars', type=int, default=0, help='film length in bars (with --in)')
     a = ap.parse_args()
 
+    if not os.path.isfile(a.track): sys.exit(f'not a local file: {a.track}')
     pcm = decode(a.track); dur = len(pcm) / SR
     o = onset(frame_rms(pcm[:SR * 90]))
     bpm = a.bpm or estimate_bpm(o)
+    if not bpm or not any(o): sys.exit('no beat found (silent or too short a track); pass --bpm and --downbeat')
     beat = 60 / bpm; bar = 4 * beat
+    if dur < 2 * bar: sys.exit(f'track is {dur:.1f}s, shorter than two bars')
     phase = estimate_phase(o, bpm)
-    kick = onset(frame_rms(decode(a.track, lowpass=120)[:SR * 90]))
+    kick = onset(frame_rms(decode(a.track, lowpass=120, seconds=90)))
     kphase = estimate_phase(kick, bpm)
     d = abs(phase - kphase) % beat
     print(f'track {dur:.2f}s  BPM {bpm}  beat {beat:.3f}s  bar {bar:.3f}s')
     print(f'beat phase: onsets {phase:.3f}s, kick band {kphase:.3f}s' +
           ('  (DISAGREE by ~half a beat: anchor --downbeat to a measured lift, confirm by ear)' if min(d, beat - d) > beat / 4 else ''))
-    db = a.downbeat if a.downbeat is not None else phase
+    if a.downbeat is not None:
+        db = a.downbeat
+    else:
+        # the phase is only known modulo one beat; pick which of the 4 beats is the downbeat by kick energy on bar starts
+        fps = SR / HOP
+        def score(k):
+            x, s = (kphase + k * beat), 0.0
+            while x * fps < len(kick) - 1: s += kick[int(x * fps)]; x += bar
+            return s
+        db = kphase + max(range(4), key=score) * beat
+        print('downbeat ESTIMATED from the kick band; confirm by ear or anchor --downbeat to a measured lift')
     first = db - math.floor(db / bar) * bar
     energies = []; t = first
     while t + bar <= dur: energies.append((t, seg_rms(pcm, t, t + bar))); t += bar

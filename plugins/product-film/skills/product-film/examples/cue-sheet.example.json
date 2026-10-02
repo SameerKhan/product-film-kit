@@ -22,5 +22,5 @@
     { "bar": 9, "beat": 1, "file": "sfx-message-pop.mp3", "gain": 0.5 },
     { "t": 48.78, "file": "sfx-bass-hit.mp3", "gain": 1.0 }
   ],
-  "ledger": {}
+  "ledger": "audio/fetch-ledger.tsv"
 }

@@ -9,6 +9,10 @@ err() { echo "FAIL: $*"; fail=1; }
 PLUGIN=plugins/product-film/.claude-plugin/plugin.json
 SKILLS=plugins/product-film/skills
 
+# 0. No symlinks: every later check reads files, and a link could point outside the checkout.
+links=$(find . -type l -not -path './.git/*')
+[ -z "$links" ] || { echo "$links"; err "symlink in repo"; }
+
 # 1. Every JSON file is valid.
 while IFS= read -r f; do python3 -m json.tool "$f" >/dev/null 2>&1 || err "invalid JSON: $f"; done \
   < <(find . -name '*.json' -not -path './.git/*')
@@ -33,7 +37,8 @@ top=$(sed -n 's/^## \([0-9][0-9.]*\) .*/\1/p' CHANGELOG.md | head -1)
 [ "$version" = "$top" ] || err "plugin.json is $version but the newest CHANGELOG entry is $top"
 
 # 4. Scripts parse.
-for f in "$SKILLS"/*/scripts/*.py; do python3 -m py_compile "$f" || err "python: $f"; done
+for f in "$SKILLS"/*/scripts/*.py; do   # parse only: py_compile would leave __pycache__ behind
+  python3 -c 'import ast,sys; ast.parse(open(sys.argv[1]).read(), sys.argv[1])' "$f" || err "python: $f"; done
 for f in "$SKILLS"/*/scripts/*.sh scripts/*.sh; do bash -n "$f" || err "bash: $f"; done
 if command -v node >/dev/null; then
   for f in "$SKILLS"/*/scripts/capture/*.mjs; do node --check "$f" || err "node: $f"; done
@@ -53,9 +58,10 @@ sys.exit(1 if hits else 0)
 PY
 
 # 7. No private paths or secrets leak into a public repo.
-bad=$(grep -rnE '/Users/|/home/[a-z]|BEGIN [A-Z ]*PRIVATE KEY|AKIA[0-9A-Z]{16}|sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}' \
+#    Prints file:line only, never the matching text, so a real secret does not land in CI logs.
+bad=$(grep -rlInE '/Users/|/home/[a-z]|BEGIN [A-Z ]*PRIVATE KEY|AKIA[0-9A-Z]{16}|sk-[A-Za-z0-9_-]{20,}|gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|xox[abpr]-[A-Za-z0-9-]{10,}|npm_[A-Za-z0-9]{30,}|[A-Za-z0-9._%+-]+@(gmail|yahoo|outlook|hotmail)\.com' \
   --exclude-dir=.git --exclude=check.sh . || true)
-[ -z "$bad" ] || { echo "$bad"; err "private path or secret-looking string"; }
+[ -z "$bad" ] || { echo "$bad"; err "private path, personal email or secret-looking string in the files above"; }
 
 if [ "$fail" -ne 0 ]; then exit 1; fi
 echo "all checks passed"

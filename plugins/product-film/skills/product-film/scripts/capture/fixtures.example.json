@@ -1,6 +1,6 @@
 {
   "GET /api/v1/user/status": { "data": { "name": "Demo Agency", "plan": "agency" } },
-  "GET /api/v1/workspaces$": { "data": [{ "id": "ws-1", "name": "Fernquay Hotels" }, { "id": "ws-2", "name": "Velloria Dental" }] },
+  "GET /api/v1/workspaces": { "data": [{ "id": "ws-1", "name": "Fernquay Hotels" }, { "id": "ws-2", "name": "Velloria Dental" }] },
   "GET /api/v1/posts": { "data": [], "meta": { "total": 0 } },
   "* /api/v1/errors": { "ok": true }
 }

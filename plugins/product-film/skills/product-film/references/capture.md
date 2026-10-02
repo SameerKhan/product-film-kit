@@ -7,9 +7,9 @@
 - Capturing any screen that can show real customer data.
 
 ## The safe path (proven)
-1. **Source**: `git archive <pinned-sha> <app> <demo-data dirs>` into a scratch
-   folder. No worktree (it mutates shared git metadata), never the working tree of
-   someone's checkout.
+1. **Source**: `mkdir -p scratch/src && git -C <repo> archive <pinned-sha> <app> <demo-data dirs> | tar -x -C scratch/src`.
+   No worktree (it mutates shared git metadata), never the working tree of
+   someone's checkout. `scripts/rename.py` refuses to run inside a git checkout.
 2. **Dependencies**: install with caches inside scratch, empty npm/yarn config (no
    registry credentials readable), `--ignore-scripts`, then run only the named
    steps the build needs (for example `patch-package`). If there is no lockfile,
@@ -24,7 +24,9 @@
    the local build origin is the only real transport; API calls are fulfilled from
    fixtures by endpoint and method; the app's own static icons are served from a
    hashed local mirror; everything else is aborted and logged. Any unmatched API
-   or localhost request fails the run. If the pinned Playwright wants a browser
+   or localhost request fails the run. This is a request-level boundary inside the
+   browser, not an operating-system firewall: for an app you do not trust, also run
+   the capture with the network off. If the pinned Playwright wants a browser
    revision you do not have, use the installed Chrome (`channel: "chrome"`), which
    runs on a fresh temporary profile.
 5. **Shots**: dismiss onboarding modals; keep the app's own "sample data" banner;
@@ -33,4 +35,5 @@
 6. **Edit**: cards tagged "Real app" and "Sample data"; 0.5 to 2 s windows chosen
    from 2 fps contact sheets of each clip.
 
-`scripts/capture/harness.mjs` is a template of this harness.
+`scripts/capture/harness.mjs` is a template of this harness. Put your app's live-mode
+variables in `REFUSE_IF_SET` so the harness refuses to start when any is set.

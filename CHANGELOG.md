@@ -4,6 +4,9 @@ Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
 ## 1.0.0 (2026-10-02)
 
+Hardened after a /tri-review (Claude + Codex + Gemini, walkthrough and operations passes) before
+the first public push; see the commit log for each fix.
+
 - First release: the `/product-film` skill, distilled from a 50 s agency hero
   film (see `references/case-study.md`).
 - Rules with the failure behind each one, a 10-phase workflow, and references

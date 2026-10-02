@@ -69,11 +69,13 @@ re-decided silently.
    flat style, no text, no logos, no UI. See `references/illustrations.md`.
 7. **Build and render.** Generate the composition from a bar-indexed timeline
    (never hand-placed seconds). Render 16:9 and 1:1 (9:16 for ads) with
-   `scripts/render.sh` (staging dir, timeout, process-group cleanup, disk floor).
+   `HYPERFRAMES_VERSION=<pinned> scripts/render.sh <dir> <name> [timeout]`
+   (staging dir, timeout, process-tree cleanup, disk floor; exit 124 = timed out).
 8. **Mix.** `scripts/mix.py cue-sheet.json`: one continuous music excerpt,
    peak-aligned SFX, ducking under big hits, two-pass loudnorm to -14 LUFS, a
    limiter so the true peak stays at or below -1 dBTP after AAC encoding.
-9. **Gates** (all must pass; see `references/qa-gates.md`): claims registry,
+9. **Gates** (all must pass; see `references/qa-gates.md`): claims registry
+   (`scripts/claims_gate.py`),
    every-frame OCR for disclosures and status truth, rule R per node, music lift
    at the chosen bars (M1), SFX onset at every slide start (M2), loudness,
    forbidden-name OCR on real footage, and an owner listening pass (M3).
@@ -89,7 +91,7 @@ re-decided silently.
 - `references/illustrations.md`: AI illustration brief and style prompt
 - `references/qa-gates.md`: every gate and how to measure it
 - `references/case-study.md`: the production this was distilled from
-- `scripts/`: `music_map.py`, `mix.py`, `reading_rule.py`, `ocr.swift`,
+- `scripts/`: `claims_gate.py`, `music_map.py`, `mix.py`, `reading_rule.py`, `ocr.swift`,
   `ocr_gate.py`, `rename.py`, `fetch.sh`, `render.sh`, `capture/harness.mjs`
   (each has usage in its header)
 - `examples/`: a cue sheet, a reading-rule node list, OCR checks and a rename

@@ -22,30 +22,42 @@ ap = argparse.ArgumentParser(); ap.add_argument('film'); ap.add_argument('checks
 a = ap.parse_args(); C = json.load(open(a.checks)); res = {}; fail = False
 
 
+if not os.path.isfile(a.film): sys.exit(f'not a local file: {a.film}')
+
+
 def frames(td, start, end, vf):
-    subprocess.run(['ffmpeg', '-v', 'error', '-ss', f'{start:.3f}', '-to', f'{end:.3f}', '-i', a.film, '-vf', vf,
-                    os.path.join(td, '%05d.png')], check=True)
+    subprocess.run(['ffmpeg', '-v', 'error', '-protocol_whitelist', 'file', '-ss', f'{float(start):.3f}', '-to', f'{float(end):.3f}',
+                    '-i', a.film, '-vf', vf, os.path.join(td, '%05d.png')], check=True, timeout=600)
     fs = sorted(os.path.join(td, f) for f in os.listdir(td))
-    return subprocess.run([a.ocr, *fs], capture_output=True, text=True, check=True).stdout.splitlines() if fs else []
+    out = []
+    for i in range(0, len(fs), 200):   # batches keep the command line under ARG_MAX
+        r = subprocess.run([a.ocr, *fs[i:i + 200]], capture_output=True, text=True, timeout=600)
+        if r.returncode != 0: sys.exit(f'OCR failed (exit {r.returncode}): {r.stdout.strip().splitlines()[-1:]}')
+        out += r.stdout.splitlines()
+    return out
 
 
-crop = lambda b: f'crop={b[2]}:{b[3]}:{b[0]}:{b[1]},scale={b[2] * 3}:{b[3] * 3}'
+text = lambda line: line.split('\t', 1)[1] if '\t' in line else ''  # OCR text only, never the file path
+def crop(b):
+    x, y, w, h = (int(v) for v in b)   # integers only: nothing from checks.json reaches the filtergraph as text
+    return f'crop={w}:{h}:{x}:{y},scale={w * 3}:{h * 3}'
 for c in C.get('must_show', []):
     with tempfile.TemporaryDirectory() as td:
         lines = frames(td, c['from'], c['to'], crop(c['box']))
-        miss = [l.split('\t')[0][-9:] for l in lines if c['want'].lower() not in l.lower()]
+        miss = [l.split('\t')[0][-9:] for l in lines if c['want'].lower() not in text(l).lower()]
         res[c['name']] = {'frames': len(lines), 'fails': len(miss), 'first_fails': miss[:5]}
         fail |= bool(miss) or not lines
 if 'forbid' in C:
     fb = C['forbid']; rx = re.compile(fb['regex'], re.I)
     with tempfile.TemporaryDirectory() as td:
-        lines = frames(td, fb['from'], fb['to'], f"fps={fb.get('fps', 10)}")
-        hits = [l.split('\t')[0][-9:] for l in lines if rx.search(l)]
+        lines = frames(td, fb['from'], fb['to'], f"fps={float(fb.get('fps', 10))}")
+        hits = [l.split('\t')[0][-9:] for l in lines if rx.search(text(l))]
         res['forbid'] = {'frames': len(lines), 'hits': hits[:5]}; fail |= bool(hits) or not lines
 if 'negative_control' in C:
     n = C['negative_control']
     with tempfile.TemporaryDirectory() as td:
         lines = frames(td, n['at'], n['at'] + 0.04, crop(n['box']))
-        found = any(n['want'].lower() in l.lower() for l in lines)
-        res['negative_control'] = {'found': found, 'ok': not found}; fail |= found
+        found = any(n['want'].lower() in text(l).lower() for l in lines)
+        res['negative_control'] = {'frames': len(lines), 'found': found, 'ok': bool(lines) and not found}
+        fail |= found or not lines   # no frame sampled means the control proved nothing
 print(json.dumps(res, indent=1)); print('OCR GATES', 'FAIL' if fail else 'PASS'); sys.exit(1 if fail else 0)

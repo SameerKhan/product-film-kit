@@ -36,7 +36,8 @@ A three-model design review of the case-study film turned these into rules:
 
 ## Producing
 Any image model works. With the Codex CLI on a ChatGPT plan, `image_generation` is
-built in: `codex exec -s workspace-write -C <dir> "Use your image generation tool to
-create <file>.png ..."`. Run several in parallel; review all side by side for style
+built in: `codex exec --ephemeral -s workspace-write -C <empty-dir> "Use your image
+generation tool to create <file>.png ..." < /dev/null`. Write access is needed to save the
+image, so point `-C` at an empty folder made for the art, never a repo or your home folder. Run several in parallel; review all side by side for style
 drift and stray text; downscale to about 800 px; hash them; use
 `mix-blend-mode: multiply` on matching backgrounds.

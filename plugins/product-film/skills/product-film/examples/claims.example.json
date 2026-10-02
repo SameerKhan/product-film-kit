@@ -1,0 +1,44 @@
+{
+  "approved": {
+    "Still chasing": "owner, hook line",
+    "client approvals?": "owner, hook line",
+    "Sample data": "system string",
+    "Real app": "system string",
+    "Discord (beta)": "page: Discord is in beta (shortened)",
+    "Roles per workspace": "owner, shortened page line",
+    "socialchamp.com": "system string"
+  },
+  "required": [
+    "Clients approve from an emailed link.",
+    "No account needed.",
+    "Discord (beta)",
+    "Book a demo",
+    "Start free",
+    "Sample data"
+  ],
+  "forbidden": [
+    "can get things wrong",
+    "Approved by your client"
+  ],
+  "exact_lists": [
+    {
+      "name": "publish grid",
+      "within": "<div id=\"ring\">.*?</div>\\s*</div>",
+      "regex": "plat-([a-z-]+)\\.",
+      "expected": [
+        "facebook",
+        "instagram",
+        "threads",
+        "twitter",
+        "bluesky",
+        "mastodon",
+        "linkedin",
+        "pinterest",
+        "tiktok",
+        "youtube",
+        "google-profile",
+        "telegram"
+      ]
+    }
+  ]
+}

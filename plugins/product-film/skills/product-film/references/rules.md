@@ -32,7 +32,8 @@
   before the biggest reveal (a breath). Ducking is mixing, not remixing.
 - **Respect "no remix" licences**: one continuous excerpt from one in-point.
 - **A gate that combines music and SFX can be gamed**: measure the music alone for
-  lifts (M1) and the SFX onset separately (M2), then a human listens (M3).
+  lifts (M1), measure the onset in the final mix (M2) AND require an SFX cue on every
+  slide start, so a music transient cannot pass M2 alone; then a human listens (M3).
 
 ## Copy and claims
 - **The landing page is the claim source.** Every on-screen string is page copy, a
