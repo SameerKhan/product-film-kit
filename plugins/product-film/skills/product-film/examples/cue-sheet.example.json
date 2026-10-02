@@ -1,0 +1,26 @@
+{
+  "video": "renders/film-silent.mp4",
+  "out": "final/film.mp4",
+  "bpm": 123,
+  "duration": 50.38,
+  "final_hit": 48.78,
+  "music": { "file": "audio/music-track.mp3", "in_point": 8.048 },
+  "sfx_dir": "audio",
+  "lift_bars": [3, 12, 18],
+  "slides": [
+    { "bar": 3 }, { "bar": 7 }, { "bar": 9 }, { "bar": 11 }, { "bar": 12 },
+    { "bar": 16 }, { "bar": 18 }, { "bar": 20 }, { "bar": 22 }, { "bar": 24 }
+  ],
+  "slide_duck_gain": 0.7,
+  "slide_duck_s": 0.3,
+  "ducks": [{ "bar": 12, "lead_beats": 2, "hold": 0, "gain": 0.5 }],
+  "cues": [
+    { "t": 0.15, "file": "sfx-ui-click.mp3", "gain": 0.4 },
+    { "bar": 3, "file": "sfx-riser-reversed.mp3", "gain": 0.55, "align": "end" },
+    { "bar": 3, "file": "sfx-bass-hit.mp3", "gain": 0.85 },
+    { "bar": 7, "offset": -0.3, "file": "sfx-sweep.mp3", "gain": 0.5 },
+    { "bar": 9, "beat": 1, "file": "sfx-message-pop.mp3", "gain": 0.5 },
+    { "t": 48.78, "file": "sfx-bass-hit.mp3", "gain": 1.0 }
+  ],
+  "ledger": {}
+}

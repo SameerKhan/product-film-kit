@@ -1,0 +1,15 @@
+{
+  "name": "product-film-kit",
+  "description": "Skills for making product launch films with Claude Code, distilled from a real production.",
+  "owner": {
+    "name": "Sameer Ahmed Khan"
+  },
+  "plugins": [
+    {
+      "name": "product-film",
+      "displayName": "Product Film",
+      "source": "./plugins/product-film",
+      "description": "Make a fast, music-driven product launch film for a SaaS landing page with /product-film: measure the track before the storyboard, cut on measured lifts, peak-aligned SFX, every claim traced to the page, safe offline real-app capture, AI illustrations but never AI product UI, and scripted gates (claims, every-frame OCR, reading time, music lift, SFX onset, loudness)."
+    }
+  ]
+}

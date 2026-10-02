@@ -1,0 +1,8 @@
+{
+  "must_show": [
+    { "name": "sample-chip", "want": "Sample data", "box": [1590, 132, 210, 66], "from": 0.6, "to": 13.2 },
+    { "name": "pending", "want": "Pending", "box": [1520, 590, 200, 110], "from": 4.4, "to": 11.3 }
+  ],
+  "forbid": { "regex": "old[\\W_]{0,7}(and|n)?[\\W_]{0,7}brand", "from": 11.7, "to": 21.5, "fps": 10 },
+  "negative_control": { "want": "Sample data", "at": 49.0, "box": [1590, 132, 210, 66] }
+}

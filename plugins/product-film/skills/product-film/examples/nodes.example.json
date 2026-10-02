@@ -1,0 +1,6 @@
+[
+  { "id": "hook", "text": "Still chasing client approvals?", "enter": 0.2, "exit": 3.7 },
+  { "id": "approve", "text": "Clients approve from an emailed link.", "enter": 3.9, "exit": 7.6 },
+  { "id": "no-account", "text": "No account needed.", "enter": 5.4, "exit": 7.6 },
+  { "id": "publish", "text": "Publish to 12 social platforms", "enter": 15.7, "exit": 19.4 }
+]

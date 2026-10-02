@@ -1,0 +1,9 @@
+{
+  "residual_regex": "old[\\W_]{0,7}(and|n)?[\\W_]{0,7}brand",
+  "map": [
+    ["Old & Brand", "Quillhaven Coffee"],
+    ["Old and Brand", "Quillhaven Coffee"],
+    ["oldbrand", "quillhaven"],
+    ["OldBrand", "Quillhaven"]
+  ]
+}
