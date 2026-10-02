@@ -36,8 +36,14 @@ A three-model design review of the case-study film turned these into rules:
 
 ## Producing
 Any image model works. With the Codex CLI on a ChatGPT plan, `image_generation` is
-built in: `codex exec --ephemeral -s workspace-write -C <empty-dir> "Use your image
-generation tool to create <file>.png ..." < /dev/null`. Write access is needed to save the
+built in: `codex exec --ephemeral --skip-git-repo-check -s workspace-write -C <empty-dir>
+"Use your image generation tool to create <file>.png ..." < /dev/null` (without
+`--skip-git-repo-check` it exits at once outside a git repo). Write access is needed to save the
 image, so point `-C` at an empty folder made for the art, never a repo or your home folder. Run several in parallel; review all side by side for style
-drift and stray text; downscale to about 800 px; hash them; use
-`mix-blend-mode: multiply` on matching backgrounds.
+drift and stray text; downscale to about 800 px; hash them.
+
+**Give every illustration a real transparent background** (colour-to-alpha from
+its flat background colour). Do not rely on `mix-blend-mode: multiply`: once GSAP
+animates a layer's opacity or transform, the layer is isolated and the blend stops
+applying, so the art's own off-white square shows as a faint box (case study: a
+3/255 difference was invisible; a whitened background became an obvious box).

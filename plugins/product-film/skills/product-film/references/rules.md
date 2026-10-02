@@ -13,7 +13,13 @@
 - **One hero move per film** (for example a spotlight lift of one card). Reusing it
   cheapens it.
 - **Promotional copy may drop negative caveats only when the owner decides**, and
-  only if what remains is still true.
+  only if what remains is still true. The same holds for disclosures such as a
+  "Sample data" chip or a "beta" tag: the default is to show them; the owner may
+  waive them, and the waiver is recorded with a date and then enforced as a
+  forbidden string so they cannot drift back in half-way.
+- **Shorter lines must stay narrower, never broader.** "Approval emails from your
+  domain" is a fair cut of "Supported approval and client emails from your verified
+  domain"; "Emails from your domain" claims more than the page does.
 - **Cover feature categories, not every detail.** "Everything on the page in 50 s"
   is mathematically unreadable; group the long tail into one card or a 90 s explainer.
 

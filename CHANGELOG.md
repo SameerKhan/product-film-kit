@@ -2,6 +2,15 @@
 
 Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
+## 1.0.1 (2026-10-02)
+
+- Illustrations: use real transparency, not `mix-blend-mode: multiply` (animated
+  layers are isolated and the blend stops applying); Codex image runs need
+  `--skip-git-repo-check` outside a repo.
+- Rules: disclosures (sample-data chips, beta tags) may be waived by the owner,
+  recorded and then enforced as forbidden strings; shortened lines must stay
+  narrower than the page line.
+
 ## 1.0.0 (2026-10-02)
 
 Hardened after a /tri-review (Claude + Codex + Gemini, walkthrough and operations passes) before

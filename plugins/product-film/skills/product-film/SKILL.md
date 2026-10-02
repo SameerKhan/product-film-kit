@@ -31,7 +31,7 @@ not just by taste.
    approved**, and every condition ("on plans that include it", "beta") stays
    attached and visible.
 6. **Every product frame carries a visible "Sample data" label**, checked on
-   every frame by OCR.
+   every frame by OCR, unless the owner waives it (record the decision).
 7. **Text breaks by phrase, never mid-phrase**, and every text node passes the
    reading rule: `0.3 s x words + 0.9 s` on screen (0.4 s entrance + 0.5 s floor).
 8. **Real-app capture never touches production**: no test signups (they pollute
