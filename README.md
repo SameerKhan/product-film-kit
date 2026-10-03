@@ -24,6 +24,10 @@ exists because a cut failed without it. See
   design-file exports. AI illustrations are fine for empty scenes.
 - **"Sample data" readable on every product frame**, checked by OCR.
 - **Phrase-based line breaks** and a per-node reading-time rule.
+- **Two proven styles**: crisp real-app (2x state-sequence capture, no raster
+  ever upscaled) and chapter style (brand pill, one-bar chapter cards, stickers
+  that follow the action). See
+  [styles](plugins/product-film/skills/product-film/references/styles.md).
 - **No production side effects**: no test signups, deny-by-default network,
   scratch-only installs, pinned tools, a hashed licence ledger.
 

@@ -32,7 +32,12 @@
 5. **Shots**: dismiss onboarding modals; keep the app's own "sample data" banner;
    draw a visible eased cursor; record 1080p video plus 2x stills in separate
    contexts; close the context before reading the video file.
-6. **Edit**: cards tagged "Real app" and "Sample data"; 0.5 to 2 s windows chosen
+6. **State sequences for sharp motion**: for anything that must stay crisp under
+   a camera move, capture one DPR 2 still per UI state (each typed character, each
+   hover) with the region it changes, instead of a video. Pin-check the source
+   before and after the run, write into a lock-guarded temp folder, and promote
+   it atomically with a backup so an interrupted run never leaves half a set.
+7. **Edit**: cards tagged "Real app" and "Sample data"; 0.5 to 2 s windows chosen
    from 2 fps contact sheets of each clip.
 
 `scripts/capture/harness.mjs` is a template of this harness. Put your app's live-mode

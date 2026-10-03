@@ -57,14 +57,17 @@ re-decided silently.
    measured lifts; a one-bar breath before the biggest reveal; one hero move in
    the whole film. Tell one continuous journey with match cuts (the object
    carries across), not a slide list. Count words: budget about 90 for 50 s.
-   Run `scripts/reading_rule.py` on the node schedule.
+   Run `scripts/reading_rule.py` on the node schedule. Pick one style from
+   `references/styles.md`: crisp real-app (the product window is the hero) or
+   chapter style (brand pill, one-bar chapter cards, stickers).
 4. **Critique the plan before building** (if `/tri-plan` or a second model is
    available): one lens for "is it right" (claims, timings, music, gates) and
    a separate lens for "is it safe to run" (privileges, network, disk, licences).
 5. **Capture real footage** (optional but strongest): see `references/capture.md`.
    Short 0.5 to 2 s micro-interactions aligned to beats (a caption typing with a
    live preview, a reply being typed, a workspace switcher opening) plus 2x
-   stills for punch-ins. Never long walkthroughs.
+   stills for punch-ins. Never long walkthroughs. For motion that must stay
+   sharp under a camera move, capture one 2x still per UI state and swap them.
 6. **Illustrations** for any scene that is only text: one consistent clay or
    flat style, no text, no logos, no UI. See `references/illustrations.md`.
 7. **Build and render.** Generate the composition from a bar-indexed timeline
@@ -78,7 +81,9 @@ re-decided silently.
    (`scripts/claims_gate.py`),
    every-frame OCR for disclosures and status truth, rule R per node, music lift
    at the chosen bars (M1), SFX onset at every slide start (M2), loudness,
-   forbidden-name OCR on real footage, and an owner listening pass (M3).
+   forbidden-name OCR on real footage, an owner listening pass (M3), and for
+   real footage: zero raster upscale, capture fidelity, cursor on target and no
+   leaked layers. Run them as one command that stops at the first failure.
 10. **Owner review**, then cut-downs (15 s, 6 s), a text transcript for
     accessibility, and web encodes. Publishing is a separate approval.
 
@@ -89,7 +94,8 @@ re-decided silently.
 - `references/copy-and-claims.md`: claims, conditions, line breaks, reading rule
 - `references/capture.md`: safe real-app capture (offline, mocked, renamed)
 - `references/illustrations.md`: AI illustration brief and style prompt
-- `references/qa-gates.md`: every gate and how to measure it
+- `references/qa-gates.md`: every gate and how to measure it, and lessons from the gates
+- `references/styles.md`: the crisp real-app and chapter styles, and the rendering facts both need
 - `references/case-study.md`: the production this was distilled from
 - `scripts/`: `claims_gate.py`, `music_map.py`, `mix.py`, `reading_rule.py`, `ocr.swift`,
   `ocr_gate.py`, `rename.py`, `fetch.sh`, `render.sh`, `capture/harness.mjs`

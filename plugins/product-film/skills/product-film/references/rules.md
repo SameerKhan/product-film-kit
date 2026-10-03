@@ -63,6 +63,11 @@
 - **Empty scenes get illustrations**: one consistent style, no text, no logos, no UI.
 - **Real footage**: short micro-interactions on beats; keep the app's honest demo
   banner; tag cards "Real app" and "Sample data".
+- **Crisp means captured sharp, not sharpened.** "The screenshots are blurred"
+  came from upscaling 1x captures. Capture at 2x, cap the camera zoom so no
+  raster exceeds 1.0x, and gate it on every frame. See `styles.md`.
+- **Feature labels must not repeat.** A pill, an eyebrow and a card title that
+  all say "Approvals" read as filler; keep one per moment.
 - **Before calling a product feature broken, check which component the route
   renders.** A commented-out handler in a legacy component was wrongly reported as
   a broken drag-and-drop that worked fine in the live component.

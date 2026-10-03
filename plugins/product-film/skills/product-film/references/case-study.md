@@ -14,6 +14,11 @@ agency and enterprise landing page: 50.4 s, 16:9 and 1:1, music only, no voiceov
 | v6 | "screens look pretty empty" | text-only scenes | clay-style illustrations, no text or UI |
 | v6 | "the logo gets mixed in the orange" | dark wordmark on brand orange | white wordmark on coloured scenes |
 | v6 | "client is on the next line" | width-based wrapping ("Still chasing client / approvals?") | phrase spans, nowrap |
+| v7 | "we don't need to say BETA", remove "Sample data" | owner waived both disclosures | waivers recorded, then enforced as forbidden strings |
+| v7 | "Inbox supports more platforms" | inbox scene showed two channels | show the breadth the page claims |
+| v7 | a white-label line "is too much text" | a full page sentence | a narrower shortened line |
+| v8 | "screenshots are blurred, not crisp" | 1x captures scaled up for punch-ins | 2x state-sequence capture, zero-upscale and fidelity gates (style A) |
+| v9 | owner asked for a version in the style of the company's earlier intro video | | chapter style (style B), cards on the standard reading rule |
 
 ## Choices that worked
 - Track: 123 BPM, measured section lift used as the downbeat anchor; in-point
@@ -29,6 +34,17 @@ agency and enterprise landing page: 50.4 s, 16:9 and 1:1, music only, no voiceov
 - Every gate passed on the final cut: -14.0 LUFS, -2.2 dBTP, music lifts 2.01,
   1.16, 1.24 at the three turns, slide onsets 6.5 to 12.2 dB, "Sample data"
   readable on every product frame, 0 old-name OCR hits.
+
+## v8 and v9
+- v8 (54.3 s) went back to the app: every still recaptured at 2x as state
+  sequences, a cursor inside the camera layer, the real Approve click, a
+  Listening scene, a named agency testimonial from the page, and governance
+  dropped for time. It added the crisp, fidelity, cursor and hold gates.
+- v9 reused v8's captures and timeline in the chapter style. Its review found
+  chapter titles readable for under half a second, sound cues left on old
+  timings after a retime, stickers out of hover order, a disabled gate check and
+  a leak check that could not tell the probe page from the renderer. All are
+  rules or gate lessons now.
 
 ## What it cost
 Four model-critic rounds on the plan, one bake-off of two renderers, three
