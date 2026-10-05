@@ -67,6 +67,28 @@ You need Claude Code. You do not need video-editing software.
    lines, the track, what may never appear on screen, who signs off) and shows you
    stills and a cut before anything is published.
 
+## Step by step
+
+The whole job from your side, in nine steps: brief, story, music, a critiqued plan,
+real screens, mock-ups, a rehearsal that cannot publish, sign-off and delivery, then
+ad cut-downs. Each step says what you tell Claude, what it asks you, what it runs and
+what to check. **[Read the walkthrough](plugins/product-film/skills/product-film/references/walkthrough.md)**,
+which also has prompts for giving feedback and a troubleshooting table.
+
+## Examples to start from
+
+Copy one of these into Claude Code and edit it:
+
+| Film | Prompt |
+|---|---|
+| Problem-led landing-page hero | "Make a 50 s hero for our agency page. Build it as four problems our buyers have, each shown before and solved in the real app after. One signature moment on the biggest lift. Real screens only, square version too." |
+| Single feature launch, 30 s | "We just shipped bulk scheduling. Make a 30 s launch film: the problem in one line, the real flow, the result, the call to action. Crisp style, cut to a 120 BPM track." |
+| Brand introduction | "Make a 45 s intro film for new visitors in the chapter style: a title card per feature, the brand pill, playful stickers, our three core features only." |
+| White-label or theme moment | "Capture the same screen in our brand and in a fictional agency's brand, and use the switch as the signature moment on the biggest lift. Show me the pair first." |
+| Re-render after a release | "The approvals screen changed. Recapture only that scene from the new build, re-render, and re-run every check." |
+| Pre-launch, nothing to run yet | "Use our design-file exports for the screens (never AI-generated UI), label them Preview, and keep every claim on the roadmap wording." |
+| Ads from an approved film | "From the approved hero, make a 15 s and a 6 s cut and a 9:16 version, ending on the call to action." |
+
 ## What you get
 
 - A landscape (16:9) and a square (1:1) master, a 1080p and a 720p web encode, a
@@ -212,6 +234,7 @@ references, so Claude can rebuild it for your film.
 
 ## Learn more
 
+- [Step-by-step walkthrough and worked examples](plugins/product-film/skills/product-film/references/walkthrough.md)
 - [Story](plugins/product-film/skills/product-film/references/story.md),
   [styles](plugins/product-film/skills/product-film/references/styles.md),
   [rebrand capture](plugins/product-film/skills/product-film/references/rebrand-capture.md)

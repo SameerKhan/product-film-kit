@@ -92,6 +92,7 @@ re-decided silently.
 
 ## Files
 
+- `references/walkthrough.md`: the whole job step by step from the owner's side, worked example prompts, troubleshooting
 - `references/rules.md`: every rule, with the failure that produced it
 - `references/music.md`: choosing, measuring and cutting to a track
 - `references/copy-and-claims.md`: claims, conditions, line breaks, reading rule

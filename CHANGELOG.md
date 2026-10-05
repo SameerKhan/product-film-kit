@@ -2,6 +2,14 @@
 
 Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
+## 1.2.1 (2026-10-05)
+
+- New `references/walkthrough.md`: the whole job from the owner's side in nine steps
+  (what you say, what Claude asks, what it runs, what you check), feedback phrasings
+  that work, seven worked example prompts, doing it by hand with the example files,
+  and a troubleshooting table from the case study's failures.
+- README: a step-by-step section and a table of example prompts to start from.
+
 ## 1.2.0 (2026-10-05)
 
 From three more cuts of the case-study film (v10 correct, v11 problem-led, v12 "wow"),
