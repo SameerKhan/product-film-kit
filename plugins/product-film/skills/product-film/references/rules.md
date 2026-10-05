@@ -41,6 +41,18 @@
   lifts (M1), measure the onset in the final mix (M2) AND require an SFX cue on every
   slide start, so a music transient cannot pass M2 alone; then a human listens (M3).
 
+## Story (see `story.md`)
+- **Problems, not features.** A crisp catalogue of nine features got no "aha". Build
+  three or four buyer problems, each a short "before" then the real product solving it.
+- **Show the pain.** A blurred window next to a question is not painful; graphic
+  mock-ups of the buyer's bad day are. Mock-ups carry no text and no real product's UI.
+- **One signature moment on the biggest lift**, real in the product today, framed on
+  the largest surfaces that change.
+- **Push in on payoffs** to about 0.97 of the sharp-zoom limit and back within a beat.
+- **Say how it escalates in numbers** (events per beat), and gate it.
+- **Product bugs found while filming are reported, never hidden** (no cropping around
+  them, no recolouring product pixels).
+
 ## Copy and claims
 - **The landing page is the claim source.** Every on-screen string is page copy, a
   shortened page phrase the owner approved, or a closed list of system strings.
@@ -79,3 +91,10 @@
   scripts off except the named steps; record the resolved versions.
 - **Pin every external tool and asset**, hash it, and keep a licence ledger.
 - **Owner decisions are explicit and recorded**; never fake reviewer consensus.
+- **Approvals live outside the sandbox**, written by the owner (or with a recorded
+  delegation), and the pipeline refuses to run if an approved file changed.
+- **A rehearsal can never promote.** Render and gate before sign-off, then sign off,
+  then deliver; never the other way round.
+- **Fix the checker, not the threshold.** Every late failure in the case study's v12
+  was a checking-tool fault (blank OCR in the sandbox, a reused temp file, a Cyrillic
+  lookalike letter); each was fixed in the tool, and no floor was lowered.

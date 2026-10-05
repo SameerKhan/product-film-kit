@@ -46,6 +46,28 @@ agency and enterprise landing page: 50.4 s, 16:9 and 1:1, music only, no voiceov
   a leak check that could not tell the probe page from the renderer. All are
   rules or gate lessons now.
 
+## v10 to v12: from correct to compelling
+- **v10** fixed v8's leftovers (28 near-empty frames, no feature names, a soft
+  proof): cuts on the beat with entrances that move instead of fading, a feature pill,
+  a cleared logo strip, a cursor pressing the call to action on the final hit. It was
+  correct, and the owner asked the right question: does it give an agency an "aha"?
+- **v11** re-cut the same footage as four agency problems (approvals in email, clients
+  mixed in one calendar, vendor branding, report day), each a pain line over a blurred
+  window, then the real product solving it, a recap tile grid and the ask.
+- **v12**, after "looks nice, but no wow": graphic "before" mock-ups (an unread-email
+  pile, a jammed calendar, a report scramble ending on a clock at 11:48 PM), camera
+  pushes on every payoff, a faster recap, and one signature moment: the real app
+  re-skinning from Social Champ orange to a fictional agency's blue ("Northlight
+  Studio") with a diagonal sweep on the bar-12 lift, captured on a fake tenant host
+  from the shipped build. The re-skin also surfaced product bugs (surfaces that kept
+  the vendor colour), which went to the product team.
+- v12's plan went through three critic rounds (two models, two lenses each); the
+  safety lens kept asking who approves the agent's own scripts, which became owner
+  decisions recorded outside the sandbox. Its final review found that a QA script still
+  measured the previous version's page and that several gates failed open; the
+  rehearsal runs then found three checking-tool faults (blank OCR in the sandbox, a
+  reused temp frame, a Cyrillic lookalike letter). None was a film defect.
+
 ## What it cost
 Four model-critic rounds on the plan, one bake-off of two renderers, three
 disk-space stops, and roughly a day of wall time. Most of the time went to the

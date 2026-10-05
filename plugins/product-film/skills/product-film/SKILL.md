@@ -58,8 +58,11 @@ re-decided silently.
    the whole film. Tell one continuous journey with match cuts (the object
    carries across), not a slide list. Count words: budget about 90 for 50 s.
    Run `scripts/reading_rule.py` on the node schedule. Pick one style from
-   `references/styles.md`: crisp real-app (the product window is the hero) or
-   chapter style (brand pill, one-bar chapter cards, stickers).
+   `references/styles.md`: crisp real-app (the product window is the hero),
+   chapter style (brand pill, one-bar chapter cards, stickers) or problem-led story
+   (buyer problems, graphic "before" mock-ups, one signature moment; see
+   `references/story.md`). For a re-skin or white-label moment, read
+   `references/rebrand-capture.md` before planning the capture.
 4. **Critique the plan before building** (if `/tri-plan` or a second model is
    available): one lens for "is it right" (claims, timings, music, gates) and
    a separate lens for "is it safe to run" (privileges, network, disk, licences).
@@ -96,6 +99,9 @@ re-decided silently.
 - `references/illustrations.md`: AI illustration brief and style prompt
 - `references/qa-gates.md`: every gate and how to measure it, and lessons from the gates
 - `references/styles.md`: the crisp real-app and chapter styles, and the rendering facts both need
+- `references/story.md`: the problem-led structure, and why a crisp catalogue got no "aha"
+- `references/rebrand-capture.md`: capturing a real white-label or theme re-skin honestly
+- `references/pipeline-ops.md`: the one-command pipeline, owner gates, sandbox facts and tooling traps
 - `references/case-study.md`: the production this was distilled from
 - `scripts/`: `claims_gate.py`, `music_map.py`, `mix.py`, `reading_rule.py`, `ocr.swift`,
   `ocr_gate.py`, `rename.py`, `fetch.sh`, `render.sh`, `capture/harness.mjs`

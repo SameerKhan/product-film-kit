@@ -1,8 +1,8 @@
 {
   "name": "product-film",
   "displayName": "Product Film",
-  "description": "Make a fast, music-driven product launch film for a SaaS landing page with /product-film: measure the track before the storyboard, cut on measured lifts, peak-aligned SFX, every claim traced to the page, safe offline real-app capture, AI illustrations but never AI product UI, and scripted gates (claims, every-frame OCR, reading time, music lift, SFX onset, loudness).",
-  "version": "1.1.0",
+  "description": "Make a fast, music-driven product launch film for a SaaS landing page with /product-film: problem-led story with graphic 'before' scenes and one signature moment, measure the track before the storyboard, cut on measured lifts, peak-aligned SFX, every claim traced to the page, safe offline real-app capture (including real white-label re-skins), AI illustrations but never AI product UI, and scripted gates (claims, every-frame OCR, reading time, zero upscale, fidelity, camera push, rendered events, music lift, SFX onset, loudness).",
+  "version": "1.2.0",
   "author": {
     "name": "Sameer Ahmed Khan"
   },

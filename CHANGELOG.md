@@ -2,6 +2,35 @@
 
 Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
+## 1.2.0 (2026-10-05)
+
+From three more cuts of the case-study film (v10 correct, v11 problem-led, v12 "wow"),
+and the pipeline that delivered them.
+
+- New `references/story.md`: why a crisp feature catalogue got no "aha", the
+  problem-led structure (pain line, graphic "before", real "after", recap, proof,
+  ask), showing pain instead of naming it, one signature moment on the biggest lift,
+  payoff push-ins, escalation measured in events per beat, layout bugs that look like
+  story problems.
+- New `references/rebrand-capture.md`: capturing a real white-label or theme re-skin
+  (fake tenant host mapped in the browser only, rewritten asset paths, seeding the
+  branding the app hydrates from, fail-closed brand gates with a negative control,
+  changed-pixel exit, verified colour targets, attestation).
+- New `references/pipeline-ops.md`: the S0 to S3 one-command pipeline, owner gates kept
+  outside the sandbox (decisions, footage and mock-up approvals, script approval
+  record, protected-tree baseline, candidate versus final), measured macOS Seatbelt
+  facts, process and cleanup rules, and tooling traps (Vision OCR blank inside the
+  sandbox until warmed, ffmpeg without `-y` keeping an old file, Cyrillic lookalikes
+  from OCR, a Homebrew upgrade changing a pinned binary).
+- Gates: empty, push, no-text mock-ups, rendered events, event-cue sync, re-skin brand
+  colour and re-skin text, final text on every encode; lessons (SSIM cannot tell two
+  brands apart, OCR gates must fail closed, sample the whole moment, overlaps change
+  what OCR sees); every gate planted with a defect on every run.
+- Styles: a third style, problem-led story. Rules: a story section and operations rules.
+- Case study: v10 to v12. README: rewritten with the why, the example film, the
+  structure, the checks, safety and sign-off.
+- `media/`: the v12 example film (720p), its poster and a storyboard.
+
 ## 1.1.0 (2026-10-03)
 
 From two more cuts of the case-study film (v8 crisp real-app, v9 chapter style).

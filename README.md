@@ -1,25 +1,48 @@
 # product-film-kit
 
-**Make a 30 to 60 second product launch video with Claude Code**: the kind of
-short, music-driven film that sits at the top of a SaaS landing page, built
-from your real product and cut to the beat.
+**Make a 30 to 60 second product film for a SaaS landing page with Claude Code**:
+the short, music-driven video at the top of the page, built from your real product,
+cut to the beat, and checked by scripts before anyone watches it.
 
 You describe the product and point Claude at your landing page. The `/product-film`
-skill walks Claude through the whole job (music, storyboard, screens, render,
-sound mix) and checks the result with scripts before you see it.
+skill walks Claude through the whole job (story, music, real screens, render, sound
+mix) and runs the checks.
 
-It came out of a real production: a hero film for
-[Social Champ](https://www.socialchamp.com)'s agency page that went through nine
-versions. Cuts were rejected as "too slow", "monotonous", "empty" and "blurry",
-and every rule in this kit exists because a cut failed without it.
+## Why this exists
+
+Most "AI product videos" fail in the same few ways: they fake the product UI, they
+blur screenshots by scaling them up, they promise things the landing page does not,
+their cuts drift off the music, and they read as a feature list nobody finishes.
+
+This kit came out of one real production: a hero film for
+[Social Champ](https://www.socialchamp.com)'s agency page that went through twelve
+versions. The owner rejected cuts as "too slow", "monotonous", "empty", "blurry" and
+finally "it looks nice, but it doesn't have a wow effect". Every rule, check and
+recipe here exists because a cut failed without it, and each one names that failure.
+The goal is that the next film starts where this one ended, not at version 1.
 [Read the case study](plugins/product-film/skills/product-film/references/case-study.md).
+
+## The example film
+
+![Storyboard of the example film](media/example-agency-hero-storyboard.jpg)
+
+**[Watch the example (54 s, 1280x720, MP4, 3.6 MB)](media/example-agency-hero-720p.mp4)**
+· [poster frame](media/example-agency-hero-poster.png)
+
+Four agency problems, each shown and then solved in the real app: chasing approvals
+over email, clients mixed in one calendar, the vendor's branding showing to clients,
+and report day. The signature moment (frames 5 and 6) is the real app re-skinning
+from Social Champ's orange to a fictional agency's blue, on the biggest lift in the
+music. Every product screen is a real render of the shipped app with demo data; the
+"before" scenes are graphic mock-ups with no text. The film is Social Champ's own:
+its brand, footage and the customer logos in it are not covered by this repo's MIT
+licence.
 
 ## Who it is for
 
-- Founders and marketers who want a launch or landing-page video without hiring
-  a studio.
-- Developers who want the video built as code, so it can be re-rendered when
-  the product changes.
+- Founders and marketers who want a launch or landing-page film without a studio.
+- Developers who want the film built as code, so it can be re-rendered whenever the
+  product changes.
 
 You need Claude Code. You do not need video-editing software.
 
@@ -32,62 +55,106 @@ You need Claude Code. You do not need video-editing software.
    /plugin install product-film@product-film-kit
    ```
 
-2. Ask for a video, for example:
+2. Ask for a film, for example:
 
-   > Make a 45 second launch video for our landing page at https://example.com.
-   > Use real screens from the app and cut it to an upbeat track.
+   > Make a 50 second hero film for our agency page at https://example.com. Build it
+   > around the problems our buyers have, use real screens from the app, and cut it
+   > to an upbeat track.
 
    Or type `/product-film` to start the guided workflow.
 
-3. Claude will ask you a few decisions along the way (which track, which
-   style, what may or may not appear on screen) and show you the cut before
-   anything is published.
+3. Claude asks you the decisions only you can make (the buyer problems, the pain
+   lines, the track, what may never appear on screen, who signs off) and shows you
+   stills and a cut before anything is published.
 
 ## What you get
 
-- A landscape (16:9) and a square (1:1) MP4, plus smaller web versions.
-- Short cut-downs for ads (15 s and 6 s) once you approve the main film.
-- The result of every check, so you can see what was measured.
+- A landscape (16:9) and a square (1:1) master, a 1080p and a 720p web encode, a
+  square web encode and a poster frame.
+- The result of every check, and a manifest of exactly which inputs and scripts
+  produced the files.
+- Short ad cut-downs (15 s and 6 s) once the main film is approved.
+
+## Tell a story, not a feature list
+
+The structure that finally worked (details:
+[story](plugins/product-film/skills/product-film/references/story.md)):
+
+| Beat | On screen |
+|---|---|
+| Hook | the first pain line, with the product already on screen |
+| Each problem, before | a short pain question in the buyer's words, over a graphic of their bad day |
+| Each problem, after | the real product solving it; the camera pushes in on the action |
+| Recap | every solved state side by side, one outcome line |
+| Proof | logos or a quote you have cleared |
+| Ask | one call to action, pressed on the final hit of the music |
+
+What moved the owner from "nice" to "wow": showing the pain instead of naming it,
+one signature moment on the biggest music lift (a real re-skin, see
+[rebrand capture](plugins/product-film/skills/product-film/references/rebrand-capture.md)),
+camera pushes on every payoff, and an escalation measured in events per beat.
+
+## Three styles
+
+| Style | Looks like | Good for |
+|---|---|---|
+| **Crisp real-app** | the product window fills the screen; real clicks and typing, pin-sharp | proving the product exists and works |
+| **Chapter** | bright background, a brand label naming each feature, title cards between sections | a first introduction to a brand |
+| **Problem-led story** | crisp real-app footage arranged as buyer problems, with graphic "before" scenes and one signature moment | a landing-page hero that should make the buyer think "that is my week" |
+
+Details and pitfalls: [styles](plugins/product-film/skills/product-film/references/styles.md).
 
 ## How it works
 
 | Step | What happens | Why it matters |
 |---|---|---|
-| 1. Copy | Claude saves your landing page's text. Every word on screen must come from it or be approved by you. | The video never promises something the page does not. |
-| 2. Music | The track is measured: tempo, and where the music gets bigger or quieter. | Scene changes land on the beat; the ending never lands on a quiet patch. |
-| 3. Storyboard | Scenes are planned on the music's bars, with a word budget (about 90 words for 50 s). | Fast enough to keep people watching, slow enough to read. |
-| 4. Screens | Real product screens, captured from a local copy of your app with all network access blocked, using demo data. | No fake UI, no real customer data, no test accounts on your live site. |
-| 5. Build | The video is written as an HTML page with animations, then rendered to MP4. | Change a line, re-render; no manual editing. |
-| 6. Sound | One continuous music excerpt, sound effects timed exactly to the beat, levels set for the web. | It sounds polished on laptop, phone and headphones. |
-| 7. Checks | Scripts measure the sound and read every frame, and stop the build if anything is wrong (see below). | You review a film that already passed the checks, not a draft. |
-
-## Two styles to choose from
-
-| Style | Looks like | Good for |
-|---|---|---|
-| **Crisp real-app** | Your product window fills the screen and the camera moves around it: real clicks, real typing, pin-sharp. | Showing that the product exists and works. |
-| **Chapter** | Bright background, a small brand label that names each feature, full-screen title cards between sections, playful stickers. | A first introduction to the brand. |
-
-Details and the pitfalls of each:
-[styles](plugins/product-film/skills/product-film/references/styles.md).
+| 1. Copy | the landing page's text is saved; every word on screen must come from it or be approved by you | the film never promises what the page does not |
+| 2. Story | three or four buyer problems, pain lines you approve, one signature moment | the film builds instead of listing |
+| 3. Music | the track is measured (tempo, bars, where it lifts and drops) before the storyboard | scene changes and the big moment land on real musical events |
+| 4. Screens | real product screens from a local copy of your app, offline, with demo data, at 2x | no fake UI, no real customer data, nothing ever enlarged |
+| 5. Build | the film is an HTML page with GSAP animation, generated from a bar-indexed timeline, rendered to MP4 | change a line, re-render; no manual editing |
+| 6. Sound | one continuous music excerpt, sound effects peak-aligned to each visual event, mixed for the web | it sounds polished on a laptop, a phone and headphones |
+| 7. Checks | scripts read every frame and the mix, and stop the build on any failure | you review a film that already passed |
+| 8. Sign-off | a rehearsal renders and checks everything without publishing; you approve; the real run delivers | nothing reaches the final folder without your approval |
 
 ## The checks
 
-Every one of these must pass before the film is shown to you. Most are scripts
-in this kit; the screen checks are recipes in the
-[checks guide](plugins/product-film/skills/product-film/references/qa-gates.md)
-that Claude builds for your film.
+Every check must pass, and every check is itself tested on each run with a planted
+defect it must catch. Recipes: [checks guide](plugins/product-film/skills/product-film/references/qa-gates.md).
 
-- **Words**: every on-screen sentence comes from your page or your approval, and
-  stays on screen long enough to read (0.3 s per word plus 0.9 s).
-- **Sharpness**: no screenshot is ever enlarged beyond the size it was captured.
-- **Accuracy**: what the film shows matches the real app (for example, a post
-  marked Pending is never shown as Approved).
-- **Names**: no real business or customer name appears in any frame (checked by
-  reading every frame with OCR).
-- **Sound**: the music builds where the story turns, every scene change has an
-  audible accent, and loudness meets web standards (-14 LUFS).
-- **You**: a final listen and watch by a person. No script replaces this.
+- **Words**: every on-screen string comes from your page or your approval, and stays
+  on screen long enough to read (0.3 s per word plus 0.9 s).
+- **Sharpness**: no screenshot is ever drawn above the size it was captured, on any
+  frame; each held screen matches its source capture (SSIM 0.97 or better).
+- **Truth**: what the film shows matches the real app (a Pending post is never shown
+  as Approved); a re-skin is proven by colour on the surfaces that change, before and
+  after.
+- **Nothing empty, nothing leaked**: no frame is background only; nothing from a
+  hidden scene is painted.
+- **Camera and events**: each payoff push reaches its zoom and comes back in time;
+  every scheduled visual event actually happens on screen.
+- **Mock-ups hold no text** (no words, generated text or images), checked in the page
+  and by reading the rendered frames.
+- **Names**: no real business or customer name appears in any frame.
+- **Sound**: the music lifts where the story turns, every scene change has an audible
+  accent, every visual event has its sound, and loudness meets web standards (-14 LUFS).
+- **Final files**: every string is readable in every delivered file.
+- **You**: a final watch with sound, muted at the size it will sit on the page, and in
+  the square format. No script replaces this.
+
+## Safety, and who signs off
+
+- Real-app capture runs offline against a local build, with every network request
+  blocked or answered by fixtures, inside a macOS sandbox profile that cannot read
+  the rest of your files or reach other local services.
+- Your decisions, approvals of captured footage and mock-ups, and the approval of the
+  scripts themselves live in a folder the pipeline's sandboxes cannot read or write;
+  the pipeline refuses to run if anything you approved has changed.
+- Nothing is published or pushed anywhere by the pipeline. Publishing is always a
+  separate decision.
+
+Details, including every sandbox fact and tooling trap we hit:
+[pipeline and operations](plugins/product-film/skills/product-film/references/pipeline-ops.md).
 
 ## What you need
 
@@ -96,34 +163,34 @@ that Claude builds for your film.
 | Tool | Used for |
 |---|---|
 | Claude Code | running the skill |
-| `ffmpeg` | measuring music, mixing sound, checking frames |
+| `ffmpeg` | measuring music, mixing sound, checking frames, encoding |
 | Python 3.9 or newer | the helper scripts (no extra packages) |
-| Node 22 and [HyperFrames](https://github.com/heygen-com/hyperframes) | turning the HTML page into an MP4 (any deterministic HTML-to-video renderer works) |
+| Node 22 and [HyperFrames](https://github.com/heygen-com/hyperframes) | rendering the HTML page to MP4 (any deterministic HTML-to-video renderer works) |
 
 **Optional**
 
 | Tool | Used for |
 |---|---|
-| Playwright | capturing real screens from your app |
-| A Mac with `swiftc` | the every-frame text checks (uses Apple's on-device text recognition) |
-| An image model | illustrations for scenes with no product screen (never for product UI) |
-| A licensed music track | Claude can help you choose, but you supply the licence |
+| Playwright with Google Chrome | capturing real screens from your app |
+| A Mac with `swiftc` | the every-frame text checks (Apple's on-device text recognition) |
+| An image model | illustrations for text-only scenes (never product UI) |
+| A licensed music track | Claude helps choose; you supply the licence |
 
 ## Ground rules the kit enforces
 
-- **No AI-generated product screens.** Real app or design-file exports only.
-  AI is fine for illustrations.
-- **No test signups on your live site.** They pollute your analytics and CRM.
-- **Licences respected.** Music that may not be remixed is used as one unbroken
-  excerpt; every asset is logged with its licence.
-- **Your decisions are recorded**, such as dropping a "beta" tag, and then
-  checked so they cannot slip back in.
+- **No AI-generated product screens.** Real app or design-file exports only. AI is
+  fine for illustrations, and graphic mock-ups are plain shapes, never your UI.
+- **No test signups on your live site.** They pollute analytics and your CRM.
+- **Licences respected.** Music that may not be remixed is one unbroken excerpt;
+  every asset is logged with its licence.
+- **Product bugs found while filming are reported, never hidden.**
+- **Your decisions are recorded and enforced**, such as dropping a "beta" tag or a
+  named exception to a check, so they cannot slip back in or silently carry over.
 
 ## Helper scripts
 
-Claude runs these for you; you only need them if you want to work by hand. They
-live in `plugins/product-film/skills/product-film/scripts/`, and each prints its
-usage at the top of the file.
+Claude runs these for you. They live in `plugins/product-film/skills/product-film/scripts/`,
+and each prints its usage at the top of the file.
 
 | Script | Does |
 |---|---|
@@ -134,25 +201,36 @@ usage at the top of the file.
 | `ocr_gate.py` + `ocr.swift` | reads every frame to find required and forbidden text |
 | `rename.py` | swaps demo names in a copy of your app's source |
 | `fetch.sh` | downloads assets safely (https only, allowed hosts, hashed) |
-| `render.sh` | renders the video with a timeout and clean shutdown |
+| `render.sh` | renders with a timeout and clean shutdown |
 | `capture/harness.mjs` | captures real app screens with all network access blocked |
+
+**Not in the kit yet:** the full v12 pipeline (generator, frame gates, sandbox
+profiles, rebrand capture harness and delivery script) is tied to the case-study
+film's layout and has not had the independent review this repo requires before
+scripts go public. Its design, every gate and every lesson are written up in the
+references, so Claude can rebuild it for your film.
 
 ## Learn more
 
+- [Story](plugins/product-film/skills/product-film/references/story.md),
+  [styles](plugins/product-film/skills/product-film/references/styles.md),
+  [rebrand capture](plugins/product-film/skills/product-film/references/rebrand-capture.md)
 - [All rules, and the failure behind each](plugins/product-film/skills/product-film/references/rules.md)
 - [Music](plugins/product-film/skills/product-film/references/music.md),
   [copy and claims](plugins/product-film/skills/product-film/references/copy-and-claims.md),
   [capturing your app](plugins/product-film/skills/product-film/references/capture.md),
   [illustrations](plugins/product-film/skills/product-film/references/illustrations.md),
-  [checks](plugins/product-film/skills/product-film/references/qa-gates.md)
-- [Changelog](CHANGELOG.md)
+  [checks](plugins/product-film/skills/product-film/references/qa-gates.md),
+  [pipeline and operations](plugins/product-film/skills/product-film/references/pipeline-ops.md)
+- [Case study](plugins/product-film/skills/product-film/references/case-study.md) and the
+  [changelog](CHANGELOG.md)
 
 ## Contributing
 
-Issues and pull requests are welcome. Run `bash scripts/check.sh` before
-pushing (CI runs it too). A new rule should say which failure it prevents.
+Issues and pull requests are welcome. Run `bash scripts/check.sh` before pushing (CI
+runs it too). A new rule must say which failure it prevents.
 
 ## Licence
 
-MIT for this kit. Music, sound effects and logos you use have their own
-licences: keep a record of each, and read the licence itself, not a summary.
+MIT for this kit. Music, sound effects, logos and the example film have their own
+licences and owners: keep a record of each, and read the licence itself, not a summary.

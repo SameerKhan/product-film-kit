@@ -1,4 +1,4 @@
-# Two proven styles
+# Three proven styles
 
 Both styles share the rules, the music-first structure and the gates. They
 differ in how a feature is introduced. Pick one per film; mixing them reads as
@@ -69,3 +69,12 @@ playful stickers. It suits a first-touch audience.
 - **Use the logo file you mean.** A brand folder can hold several variants (a
   blue one sat next to the orange one); crop the mark from the canonical
   wordmark if no mark file exists.
+
+## C. Problem-led story (the "aha" cut)
+
+Built on style A's crisp captures, structured as buyer problems (see `story.md`):
+a short pain line over a graphic "before", the real UI solving it with a camera push
+on the action, a recap of every solved state, proof, and the ask. One signature moment
+sits on the biggest music lift; in the case study it was the real app re-skinning to
+an agency's brand (see `rebrand-capture.md`). It suits a landing-page hero whose job
+is recognition ("that is my week") before features.
