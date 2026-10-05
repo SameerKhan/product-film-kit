@@ -2,6 +2,15 @@
 
 Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
+## 1.2.2 (2026-10-06)
+
+- New `references/recipes.md`: the exact messages to type into Claude Code, one by one
+  and in order, for seven kinds of film (problem-led hero, single feature launch, brand
+  introduction, white-label or theme re-skin, re-render after a release, pre-launch from
+  design exports, ad cut-downs), with one-time setup, what happens after each message,
+  and short replies for common decisions.
+- README links the recipes from the examples section.
+
 ## 1.2.1 (2026-10-05)
 
 - New `references/walkthrough.md`: the whole job from the owner's side in nine steps

@@ -77,7 +77,9 @@ which also has prompts for giving feedback and a troubleshooting table.
 
 ## Examples to start from
 
-Copy one of these into Claude Code and edit it:
+**[Recipes: the exact messages to type, one by one](plugins/product-film/skills/product-film/references/recipes.md)**
+for each kind of film below, from installing the plugin to promoting the final cut.
+Or copy a starting prompt into Claude Code and edit it:
 
 | Film | Prompt |
 |---|---|
@@ -234,6 +236,7 @@ references, so Claude can rebuild it for your film.
 
 ## Learn more
 
+- [Recipes: the exact messages to type, for seven kinds of film](plugins/product-film/skills/product-film/references/recipes.md)
 - [Step-by-step walkthrough and worked examples](plugins/product-film/skills/product-film/references/walkthrough.md)
 - [Story](plugins/product-film/skills/product-film/references/story.md),
   [styles](plugins/product-film/skills/product-film/references/styles.md),
