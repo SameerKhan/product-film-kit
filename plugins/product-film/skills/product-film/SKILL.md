@@ -92,6 +92,7 @@ re-decided silently.
 
 ## Files
 
+- `references/brief-template.md`: the one message to write first (template, field guide, filled-in examples)
 - `references/recipes.md`: the exact messages to type, in order, for seven kinds of film
 - `references/walkthrough.md`: the whole job step by step from the owner's side, worked example prompts, troubleshooting
 - `references/rules.md`: every rule, with the failure that produced it

@@ -5,6 +5,10 @@ each message, the line below it says what Claude does and what it will ask you. 
 the parts in angle brackets. You can stop after any step and pick up later: Claude
 keeps the plan, the decisions and the files on disk.
 
+**Start with the brief.** The fastest first message is a full brief: see
+`brief-template.md` for the template, what each field means and three filled-in
+examples. Every recipe's first message can be replaced by it.
+
 `/tri-plan` and `/tri-review` (plan critique and code review by two other models) come
 from [model-crosscheck](https://github.com/SameerKhan/model-crosscheck). Without them,
 type "Critique this plan once for correctness and once for safety" and "Review the

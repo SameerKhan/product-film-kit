@@ -2,6 +2,13 @@
 
 Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
+## 1.2.3 (2026-10-06)
+
+- New `references/brief-template.md`: the one message to write first. A copy-and-fill
+  template, what each field is for with a good and a bad answer, and three filled-in
+  briefs (a problem-led hero, a feature launch, a brand introduction).
+- README quick start, recipes and SKILL.md point to it.
+
 ## 1.2.2 (2026-10-06)
 
 - New `references/recipes.md`: the exact messages to type into Claude Code, one by one

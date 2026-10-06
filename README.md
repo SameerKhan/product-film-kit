@@ -55,7 +55,10 @@ You need Claude Code. You do not need video-editing software.
    /plugin install product-film@product-film-kit
    ```
 
-2. Ask for a film, for example:
+2. Write a brief: one message with your product, page, buyer, their problems, how the
+   product solves each, the signature moment, the call to action and what must never
+   appear. **[Brief template, what each field means, and three filled-in examples](plugins/product-film/skills/product-film/references/brief-template.md)**.
+   Or start with a short request, for example:
 
    > Make a 50 second hero film for our agency page at https://example.com. Build it
    > around the problems our buyers have, use real screens from the app, and cut it
@@ -236,6 +239,7 @@ references, so Claude can rebuild it for your film.
 
 ## Learn more
 
+- [What to write: the brief template and filled-in examples](plugins/product-film/skills/product-film/references/brief-template.md)
 - [Recipes: the exact messages to type, for seven kinds of film](plugins/product-film/skills/product-film/references/recipes.md)
 - [Step-by-step walkthrough and worked examples](plugins/product-film/skills/product-film/references/walkthrough.md)
 - [Story](plugins/product-film/skills/product-film/references/story.md),
