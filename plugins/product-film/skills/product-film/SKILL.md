@@ -1,6 +1,6 @@
 ---
 name: product-film
-description: Make a fast, music-driven product launch film for a SaaS landing page (hero cut plus 1:1 and ad cut-downs) from real product footage, with every claim traceable to the page and every gate measured. Use when someone asks for a launch video, teaser, hero video, product film, or a video for a landing page, or says "make it hooking", "cut it to the music", or "use real app footage".
+description: Make a fast, music-driven product launch film for a SaaS landing page (hero cut plus 1:1 and ad cut-downs) from real product footage, with every claim traceable to the page and every gate measured. Use when someone asks for a launch video, teaser, hero video, product film, or a video for a landing page, or says "make it hooking", "cut it to the music", or "use real app footage". Also covers short vertical cuts from someone speaking to camera, including recuts of an editor's finished video.
 ---
 
 # Product film
@@ -90,10 +90,14 @@ re-decided silently.
 10. **Owner review**, then cut-downs (15 s, 6 s), a text transcript for
     accessibility, and web encodes. Publishing is a separate approval.
 
+**Someone speaking to camera instead of a screen film?** Follow `references/footage-edit.md`
+(and recipe H in `references/recipes.md`); the gates, owner review and publishing rules
+above still apply.
+
 ## Files
 
 - `references/brief-template.md`: the one message to write first (template, field guide, filled-in examples)
-- `references/recipes.md`: the exact messages to type, in order, for seven kinds of film
+- `references/recipes.md`: the exact messages to type, in order, for seven kinds of film, plus short vertical cuts from talking-head footage
 - `references/walkthrough.md`: the whole job step by step from the owner's side, worked example prompts, troubleshooting
 - `references/rules.md`: every rule, with the failure that produced it
 - `references/music.md`: choosing, measuring and cutting to a track
@@ -105,6 +109,7 @@ re-decided silently.
 - `references/story.md`: the problem-led structure, and why a crisp catalogue got no "aha"
 - `references/rebrand-capture.md`: capturing a real white-label or theme re-skin honestly
 - `references/pipeline-ops.md`: the one-command pipeline, owner gates, sandbox facts and tooling traps
+- `references/footage-edit.md`: talking-head reels and recuts of an editor's video (consent, waveform cut points, b-roll reuse, privacy, delivery)
 - `references/case-study.md`: the production this was distilled from
 - `scripts/`: `claims_gate.py`, `music_map.py`, `mix.py`, `reading_rule.py`, `ocr.swift`,
   `ocr_gate.py`, `rename.py`, `fetch.sh`, `render.sh`, `capture/harness.mjs`

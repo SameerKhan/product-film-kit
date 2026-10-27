@@ -2,6 +2,25 @@
 
 Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
+## 1.3.0 (2026-10-27)
+
+- New `references/footage-edit.md`: editing real footage of people. Consent per person
+  and channel bound to the recordings' hashes; a measured review of an editor's cut;
+  measuring the raw-to-edit offset around every reused range against a recorded value; cut points from the waveform, not
+  transcript word times (with a written exception for joins that have no silence);
+  reusing an editor's b-roll (measured burned-caption band, crop tables, hold instead
+  of stretch, layout changes snapped to captions); privacy for reused product footage
+  (a person reviews every distinct frame the cut shows and the cut is bound to those
+  frames by hash, because an OCR allowlist fails open); quiet mic tracks; vertical layouts without upscaling; promoting the
+  exact candidate the owner watched, consent recorded before any processing, exact final manifests, finals-only export, and
+  retention implemented in code. Docs only; the two productions' scripts are not
+  ported.
+- `rules.md`: a section of rules for real footage of people.
+- `qa-gates.md`: gates for footage edits, each with the planted defect that proves it
+  (none ships as a script), and three lessons from building them.
+- `recipes.md`: recipe H, short vertical cuts from a talking-head video.
+- SKILL.md, README and plugin descriptions point to the new page.
+
 ## 1.2.3 (2026-10-06)
 
 - New `references/brief-template.md`: the one message to write first. A copy-and-fill

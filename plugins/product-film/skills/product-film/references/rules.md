@@ -84,6 +84,27 @@
   renders.** A commented-out handler in a legacy component was wrongly reported as
   a broken drag-and-drop that worked fine in the live component.
 
+## Real footage of people (see `footage-edit.md`)
+- **Consent first, per person and per channel, bound to the file hashes.** A consent record
+  that names no recording let any video run under it.
+- **Cut on the waveform, not on transcript word times.** Whisper-based cut points
+  clipped two words; a word the transcript placed 240 ms early would have been
+  captioned but never heard.
+- **Measure the burned-caption band before cropping an editor's b-roll**, and check
+  every crop against it. The plan's guess was 120 px off.
+- **Snap layout changes to caption starts.** A caption that straddles a layout
+  change jumps position mid-phrase.
+- **Never show a real inbox or account list.** An editor's b-roll showed real
+  people's handles. Crop to first-party text, have a person review every distinct
+  frame the cut shows, and bind the cut to those frames by hash, because an OCR
+  allowlist fails open.
+- **Measure the dialogue level first.** A -43.5 LUFS mic track left speech 0.5 dB
+  over the music until a measured pre-gain was added.
+- **Export finals only.** The first export accepted candidates and would have copied
+  unreviewed face and voice footage to a shared folder before the owner's review.
+- **The final is the candidate the owner watched**, copied and verified. A
+  re-render after approval ships bytes the owner never saw.
+
 ## Operations
 - **Disk gates before every heavy step**; a full disk breaks other people's work.
 - **Clean up on SIGTERM, not just Ctrl-C**: killed runs leave browser temp profiles.

@@ -315,6 +315,29 @@ Use inside Recipe A or B when the product supports custom branding or themes.
 
 ---
 
+## Recipe H. Short vertical cuts from a talking-head video
+
+Use when someone speaks to camera (a founder, a colleague), raw or already edited.
+Read `footage-edit.md` first.
+
+1. ```text
+   Consent first: on <date> I asked <name> by <how>, told them <what it is for>, and that saying no has no consequence. They agreed to <processing, organic, website, paid> and can withdraw by <how>. Record it and bind it to the hashes of the files in <folder>. Do not open the footage before that is recorded.
+   ```
+2. ```text
+   Before cutting anything, build the gates from footage-edit.md and qa-gates.md and show me each one failing on its planted defect.
+   ```
+3. ```text
+   Now review the editor's cut: loudness, captions, brand name, outro, claims. Then plan 45 to 60 second cuts in 9:16, 4:5 and 16:9. Keep these lines: <lines>. The end card says <URL>.
+   ```
+4. ```text
+   Check that the raw audio syncs with the video, and measure the offset to the editor's cut around every range you reuse. Never show real customer data from the editor's b-roll: show me contact sheets of every distinct UI frame the cut will show, before building.
+   ```
+5. ```text
+   Build the candidate, run every gate, then let me watch it in place. I will say "approved" or what to change.
+   ```
+
+---
+
 ## Short replies that move things along
 
 | When Claude asks | You can answer |

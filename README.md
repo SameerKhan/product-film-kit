@@ -240,7 +240,7 @@ references, so Claude can rebuild it for your film.
 ## Learn more
 
 - [What to write: the brief template and filled-in examples](plugins/product-film/skills/product-film/references/brief-template.md)
-- [Recipes: the exact messages to type, for seven kinds of film](plugins/product-film/skills/product-film/references/recipes.md)
+- [Recipes: the exact messages to type, for seven kinds of film and talking-head cuts](plugins/product-film/skills/product-film/references/recipes.md)
 - [Step-by-step walkthrough and worked examples](plugins/product-film/skills/product-film/references/walkthrough.md)
 - [Story](plugins/product-film/skills/product-film/references/story.md),
   [styles](plugins/product-film/skills/product-film/references/styles.md),
@@ -252,6 +252,7 @@ references, so Claude can rebuild it for your film.
   [illustrations](plugins/product-film/skills/product-film/references/illustrations.md),
   [checks](plugins/product-film/skills/product-film/references/qa-gates.md),
   [pipeline and operations](plugins/product-film/skills/product-film/references/pipeline-ops.md)
+- [Editing real footage: talking-head reels and recuts of an editor's video](plugins/product-film/skills/product-film/references/footage-edit.md)
 - [Case study](plugins/product-film/skills/product-film/references/case-study.md) and the
   [changelog](CHANGELOG.md)
 

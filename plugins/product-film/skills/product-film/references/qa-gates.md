@@ -74,3 +74,31 @@ not in the film for the final text check.
   the live window, so the app's own text shows through its gaps. Run the rendered
   no-text check where the mock sits on plain background, and rely on the DOM check
   elsewhere.
+
+## Gates for edits of real footage (see `footage-edit.md`)
+
+None of these ships as a script; build each and prove it with its planted defect
+before the first cut is planned. Controls that need a real frame (such as a
+third-party inbox frame) run only after consent is recorded.
+
+| Gate | Measures | Planted defect it must catch |
+|---|---|---|
+| Words | every captioned word (identity and order from the transcript) ends inside its cut; the 40 ms just before every in and just after every out is room tone (at or below -50 dB 10 ms RMS, or a written per-join exception) | an out point moved 60 ms into a word |
+| Cut (rendered) | at every join of the rendered dialogue: no click (largest sample-to-sample step within 2 ms of the join above -30 dBFS) and no dropout (more than 60 ms below -60 dB) | a join rendered without its fades |
+| Offset | the editor's cut minus the raw footage, envelope cross-correlation, in a window around every reused range; each within 20 ms of the offset recorded in setup | one reused range shifted by 100 ms |
+| UI frames | the hash of every source UI frame the cut shows (decoded, before scaling) is in the set a person reviewed | a frame of the real inbox list |
+| UI words | OCR of the same frames against an allowlist, held frames weighted by their on-screen frames | the same inbox frame, through the same function |
+| Burned captions | every crop rectangle avoids the measured caption band of the source | a crop over the band |
+| Captions | the caption tokens equal the transcript tokens of the cuts, in order (a sequence check, not a timing check); every caption read by OCR at its midpoint (re-read once at 2x if blank) | a dropped word; the wrong words |
+| Caption box | on every caption's midpoint frame, a pixel 12 px inside the box's left edge at its vertical centre (padding, never text) matches the box colour | a box rendered at 92% opacity over a light frame |
+| Prompt cards | each card reads by OCR on the rendered frame 0.6 s after it arrives | a card removed from the timeline |
+| Safe area | captions, labels, end-card images and logos inside the text-safe area (used here: 9:16 x 60 to 940, y 220 to 1500; 4:5 x 60 to 1020, y 70 to 1190; 16:9 x 96 to 1824, y 60 to 1020) | a caption at the bottom edge |
+
+- **Weight held frames.** A frame held for 25 frames is one image but 25 frames on
+  screen; counting images let a word on a held frame pass as one-frame OCR noise.
+- **Keep gate scratch out of each other's way.** Per-segment frame folders inside the
+  gate's temp folder were picked up as sampled frames; filter by exact file name.
+- **Hash what you OCR.** A frame-hash pass run with `framemd5` over the whole file
+  (no `-an` or `-map 0:v`) also hashed the audio packets, giving 2.5 times more
+  hashes than frames. Hash the extracted image files, which are the same files the
+  OCR reads.
