@@ -2,6 +2,30 @@
 
 Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
+## 1.4.0 (2026-10-30)
+
+- New `references/in-scene-motion.md`: product UI composited BEHIND a speaker (a person
+  matte per output frame, behind and front layers, giant words passing behind the head)
+  and made to move like a modern explainer from real screenshots. It covers:
+  - studying a reference's motion at 0.25 s instead of stills (capture during playback
+    when the video should not be downloaded);
+  - parts declared on the source and verified with OCR line boxes;
+  - clean bases (row-sampled fills under parts not yet arrived, proven by a gate) and
+    nested parts as holes;
+  - chart bars grown with a monotone reveal;
+  - one cursor click whose result is true, and redacting personal data at ingest;
+  - spring damping chosen from the overshoot cap, rest scale = fit / peak;
+  - easing computed once as dense keyframes, and timing against a fixed cut with declared,
+    measured reading-time exceptions;
+  - what the gates caught in the first runs, and recovering a production after a reboot
+    wiped its temporary workspace.
+  Docs only; the production's scripts are not ported.
+- `qa-gates.md`: gates for in-scene UI and motion, each with its planted defect.
+- `rules.md`: rules for in-scene UI and motion; never keep a production in a temporary
+  directory.
+- `recipes.md`: recipe I, put the product UI in the room.
+- SKILL.md, README and plugin descriptions point to the new page.
+
 ## 1.3.0 (2026-10-27)
 
 - New `references/footage-edit.md`: editing real footage of people. Consent per person

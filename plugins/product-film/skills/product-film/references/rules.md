@@ -105,7 +105,24 @@
 - **The final is the candidate the owner watched**, copied and verified. A
   re-render after approval ships bytes the owner never saw.
 
+## In-scene UI and motion (`in-scene-motion.md`)
+- **Study a reference at 0.25 s through the whole film, not in stills.** Six stills read
+  "cards on a wall"; the motion (builds, clicks, live UI) only showed at 4 fps.
+- **Product pixels stay real.** Parts are crops of the approved source; the only other
+  product-card pixels are row-sampled fills under parts not yet arrived, proven by a gate.
+- **Click only where the result is true.** A button that opens a settings page does not
+  "approve"; no click there.
+- **Redact personal data in the input**, not with an overlay; then gate for email-shaped text.
+- **Pick spring damping from the overshoot cap**, and size cards at fit / peak multiplier,
+  so overshoot never leaves the zone or passes 1.0x source.
+- **One place computes easing** (dense keyframes); the renderer interpolates and the gates
+  read the same numbers.
+- **When a rule cannot fit the owner's cut, declare a measured exception**; never lower a
+  floor silently.
+
 ## Operations
+- **Never keep a production in a temporary directory.** A reboot wiped one; recovery
+  needed a transcript replay and every approval hash to prove it.
 - **Disk gates before every heavy step**; a full disk breaks other people's work.
 - **Clean up on SIGTERM, not just Ctrl-C**: killed runs leave browser temp profiles.
 - **Package caches inside the scratch folder**, empty registry config, install

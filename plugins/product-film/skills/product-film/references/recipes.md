@@ -338,6 +338,24 @@ Read `footage-edit.md` first.
 
 ---
 
+## Recipe I. Put the product UI in the room (behind the speaker)
+
+For a talking-head reel whose graphics sit in boxes and look dated. Follow
+`references/in-scene-motion.md`; recipe H's consent and privacy steps come first.
+
+1. "Here is the reference video [link]. Analyse its motion, not stills: capture it every
+   0.25 s while it plays, give me a beat table with times and a technique catalogue, and
+   tell me which techniques our footage can support (run a hand-pose pass on our cut)."
+2. "Plan the in-scene version: person matte per output frame, behind and front layers,
+   giant words behind the head, and the product UI built from parts of our approved
+   screenshots (clean bases, one true click, staggered exits). List every new card's text
+   for my approval, and the gates with their planted defects."
+3. "Build it, run every gate in every format, and show me only a candidate that passes.
+   Write each deviation from the plan with its measured reason."
+4. After viewing: "approved" or the changes. If real-pixel motion still reads static,
+   decide then whether to capture live screen recordings (demo data, a privacy pass and
+   new text approvals).
+
 ## Short replies that move things along
 
 | When Claude asks | You can answer |

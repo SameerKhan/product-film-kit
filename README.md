@@ -253,6 +253,7 @@ references, so Claude can rebuild it for your film.
   [checks](plugins/product-film/skills/product-film/references/qa-gates.md),
   [pipeline and operations](plugins/product-film/skills/product-film/references/pipeline-ops.md)
 - [Editing real footage: talking-head reels and recuts of an editor's video](plugins/product-film/skills/product-film/references/footage-edit.md)
+- [UI in the room: compositing product UI behind a speaker, and making it move](plugins/product-film/skills/product-film/references/in-scene-motion.md)
 - [Case study](plugins/product-film/skills/product-film/references/case-study.md) and the
   [changelog](CHANGELOG.md)
 

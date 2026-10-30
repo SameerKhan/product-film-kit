@@ -92,7 +92,8 @@ re-decided silently.
 
 **Someone speaking to camera instead of a screen film?** Follow `references/footage-edit.md`
 (and recipe H in `references/recipes.md`); the gates, owner review and publishing rules
-above still apply.
+above still apply. **Product UI in the room, behind the speaker, built from real
+screenshots that move?** Follow `references/in-scene-motion.md` (recipe I).
 
 ## Files
 
@@ -110,6 +111,7 @@ above still apply.
 - `references/rebrand-capture.md`: capturing a real white-label or theme re-skin honestly
 - `references/pipeline-ops.md`: the one-command pipeline, owner gates, sandbox facts and tooling traps
 - `references/footage-edit.md`: talking-head reels and recuts of an editor's video (consent, waveform cut points, b-roll reuse, privacy, delivery)
+- `references/in-scene-motion.md`: UI composited behind a speaker (person matte) and moving like a modern explainer: parts, clean bases, one true click, motion gates, recovery lessons
 - `references/case-study.md`: the production this was distilled from
 - `scripts/`: `claims_gate.py`, `music_map.py`, `mix.py`, `reading_rule.py`, `ocr.swift`,
   `ocr_gate.py`, `rename.py`, `fetch.sh`, `render.sh`, `capture/harness.mjs`

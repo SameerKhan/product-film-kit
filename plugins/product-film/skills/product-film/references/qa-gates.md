@@ -102,3 +102,28 @@ third-party inbox frame) run only after consent is recorded.
   (no `-an` or `-map 0:v`) also hashed the audio packets, giving 2.5 times more
   hashes than frames. Hash the extracted image files, which are the same files the
   OCR reads.
+
+## Gates for in-scene UI and motion
+
+For product UI composited behind a speaker and built from real screenshots
+(`in-scene-motion.md`). None ships as a script; each must fail on its planted defect.
+
+| Gate | Measures | Planted defect it must catch |
+|---|---|---|
+| Matte (visible) | face and torso coverage, and stray matte on the wall, counted only where the RENDERED behind layer has alpha | a moving graphic over a matte hole: flagged on exactly the frame it covers the hole |
+| Behind | each giant word: 1 to 35 % of its glyph pixels behind a person at entry, hero and exit; OCR edit distance at most 1 on the hero frame | a word fully behind the person; a word that misses everyone |
+| Clean base | base equals source outside the parts; every fill equals its row sample; the built card equals the source (premultiplied colour, 2 levels, 99.9 % of pixels) | a fill outside the part rects; a missing part |
+| Slices | parts inside the source; no OCR line crosses a part edge; every line in the format's crop is in a part or a declared static list | a part rect shifted through a title |
+| Motion | each card builds in at least 2 steps; the float scale rises on every hold frame at the authored drift (within 10 %) and the base grows at least 1 px/s | a frozen card; a single-step card; a 0.01 %/s drift |
+| Cursor | each press inside its target's drawn box; the arrow never in the person zone | a press 2000 px off; a path through the face |
+| Choreography | spawn origin within 6 px at the declared start scale; entry times; reverse exits; ordered builds; dim level; ring grows; pressed part on top; cursor top-most; bar reveals monotonic | a card spawned 40 px off |
+| Collision and wall | every frame, from the renderer's drawn boxes, group unions, 20 px padding; one declared handoff may overlap for at most 0.35 s | an unrelated pair overlapping 0.2 s; the declared pair outside its window |
+| Read and legible | each card's key line on screen for 0.3 s per word + 0.9 s (or a declared, measured exception) and at least the approved line height | a key line held 0.5 s; a key line at 0.2x |
+| Upscale | the drawn size (rest x peak keyframe scale) never above the source pixels; the renderer refuses too | a spring overshoot taking a card to 1.035x |
+| Cues and email | one whoosh per on-beat card group, in the mixer's input; no email-shaped string in any OCR output or report | a card's whoosh removed; a planted address |
+
+- **Compare premultiplied colour on cut-outs.** Rounded corners and transparent margins
+  fail a straight-alpha comparison after a premultiplied round trip.
+- **Read geometry from the renderer, not the plan.** Per-frame drawn boxes found a spawned
+  card leaving its zone for 3 frames, then (after a fix) its origin moved 53 px; a static
+  check of rest positions saw neither.
