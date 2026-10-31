@@ -120,6 +120,20 @@
 - **When a rule cannot fit the owner's cut, declare a measured exception**; never lower a
   floor silently.
 
+## Polish review (`polish-review.md`)
+- **Only stills of the current candidate count.** An inventory filled while building said "none
+  found" on a cut with 25 must-fix faults.
+- **Do the polish pass on full-size frames, not contact sheets.** Reduced sheets missed what
+  the owner saw. The privacy sheet in `footage-edit.md` still applies.
+- **Re-review every rebuild, and audit gate changes.** Widened containers and new full-bleed
+  declarations hid three real faults behind a PASS.
+- **Never burn a review mark into a frame.** A "not approved" tag forced a re-render after
+  approval. Ask in chat instead.
+- **Use the track the owner named.** Options built on another track were thrown away.
+- **A faster backdrop does not make a screen alive.** Show a real state change.
+- **Separate the owner's rulings from the agent's in the ledger.** A builder recorded the
+  agent's cut as an owner ruling.
+
 ## Operations
 - **Never keep a production in a temporary directory.** A reboot wiped one; recovery
   needed a transcript replay and every approval hash to prove it.

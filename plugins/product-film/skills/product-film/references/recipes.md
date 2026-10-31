@@ -356,6 +356,20 @@ For a talking-head reel whose graphics sit in boxes and look dated. Follow
    decide then whether to capture live screen recordings (demo data, a privacy pass and
    new text approvals).
 
+## Recipe J. Gates pass, but the screens look cut or unpolished
+
+For a real-app film the owner calls unpolished. Follow `references/polish-review.md`.
+
+1. "Review the current candidate one segment at a time, using full-size frames at 4 per second,
+   stepping through every transition frame by frame. Give me each finding with its time, grade and frame path.
+   Do not use contact sheets for this pass, and do not repeat this known list: [list]."
+2. "Verify every MUST on your own frame, then fix them. Do not move any gate container,
+   threshold or exemption unless I approve it, and show me the frames it affects first."
+3. "Re-check the last list on the new encode: FIXED, GONE-WITH-THE-BEAT, CHANGED-BUT-WRONG or
+   STILL-THERE. Sort each failing gate into REAL or FALSE ALARM with a measurement."
+4. "Bring me product bugs as decisions, keep the shot or fix and re-take, with your
+   recommendation. Do not repaint them, and do not put review marks on the frames."
+
 ## Short replies that move things along
 
 | When Claude asks | You can answer |

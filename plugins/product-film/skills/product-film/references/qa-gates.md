@@ -75,6 +75,12 @@ not in the film for the final text check.
   no-text check where the mock sits on plain background, and rely on the DOM check
   elsewhere.
 
+## Polish and lifeless gates
+
+See `polish-review.md`: corner, padding, headline clearance and frame margin legs, the
+static, flat, cursor and alive classifier, and how to audit a gate change. NOT-RUN is never
+a pass.
+
 ## Gates for edits of real footage (see `footage-edit.md`)
 
 None of these ships as a script; build each and prove it with its planted defect

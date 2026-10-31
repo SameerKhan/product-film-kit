@@ -37,6 +37,8 @@ not just by taste.
 8. **Real-app capture never touches production**: no test signups (they pollute
    the funnel metrics), a deny-by-default offline browser, and the app's own
    demo data with fictional names that you have web-checked.
+9. **No review marks on frames, ever.** Status such as "not approved" goes in chat and
+   the ledger; a burned-in mark forces a re-render once it is approved.
 
 ## Workflow
 
@@ -93,7 +95,8 @@ re-decided silently.
 **Someone speaking to camera instead of a screen film?** Follow `references/footage-edit.md`
 (and recipe H in `references/recipes.md`); the gates, owner review and publishing rules
 above still apply. **Product UI in the room, behind the speaker, built from real
-screenshots that move?** Follow `references/in-scene-motion.md` (recipe I).
+screenshots that move?** Follow `references/in-scene-motion.md` (recipe I). **Gates pass
+but screens look cut or unpolished?** Follow `references/polish-review.md` (recipe J).
 
 ## Files
 
@@ -112,6 +115,7 @@ screenshots that move?** Follow `references/in-scene-motion.md` (recipe I).
 - `references/pipeline-ops.md`: the one-command pipeline, owner gates, sandbox facts and tooling traps
 - `references/footage-edit.md`: talking-head reels and recuts of an editor's video (consent, waveform cut points, b-roll reuse, privacy, delivery)
 - `references/in-scene-motion.md`: UI composited behind a speaker (person matte) and moving like a modern explainer: parts, clean bases, one true click, motion gates, recovery lessons
+- `references/polish-review.md`: full-size frame review of each candidate, gates that hide faults, polish and lifeless gates, cursor and transition faults, product faults as owner decisions, no review marks on frames
 - `references/case-study.md`: the production this was distilled from
 - `scripts/`: `claims_gate.py`, `music_map.py`, `mix.py`, `reading_rule.py`, `ocr.swift`,
   `ocr_gate.py`, `rename.py`, `fetch.sh`, `render.sh`, `capture/harness.mjs`

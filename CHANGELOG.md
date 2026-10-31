@@ -2,6 +2,19 @@
 
 Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
+## 1.5.0 (2026-11-01)
+
+- New `references/polish-review.md`, from a 79 s feature launch film that passed its gates
+  while the owner called its screens cut. It covers reviewing full-size frames of each
+  candidate, re-checking the last list row by row, gate changes that hid real faults, polish
+  and lifeless gates, recurring cursor and transition faults, product faults as owner
+  decisions, and what stays open before release. Docs only; the production's scripts are
+  not ported.
+- `SKILL.md`: new non-negotiable, no review marks on frames.
+- `rules.md`, `qa-gates.md`: rules and gates from the same production.
+- `recipes.md`: recipe J, gates pass but the screens look cut.
+- README and plugin descriptions point to the new page.
+
 ## 1.4.0 (2026-10-30)
 
 - New `references/in-scene-motion.md`: product UI composited BEHIND a speaker (a person
