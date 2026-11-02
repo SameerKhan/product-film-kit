@@ -20,7 +20,14 @@
   every candidate section boundary.
 
 ## Cutting
-- Build the timeline in integer bars; derive seconds from BPM and phase.
+- Build the timeline in integer bars; derive seconds from BPM and phase. Never
+  round the bar to a tidy number: 2.4 s against a measured 2.412 s drifted about
+  0.45 s by bar 38.
+- Gate each hit on the track's onset strength at the hit against its neighbours,
+  not only on bar energy. A hit on a high-energy bar can still sit on a weak onset.
+  `music_map.py` does not measure this yet; `change-an-approved-film.md` gives an
+  algorithm with starting numbers and its planted defect.
+- `music_map.py` assumes four beats to a bar. Use songs in four, or count bars yourself.
 - Section starts snap to downbeats; inside a section, motion lands on beats.
 - If the reading rule leaves no slack before a lift, snap to half-beats rather
   than lengthening the film.

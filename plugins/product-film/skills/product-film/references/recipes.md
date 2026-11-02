@@ -370,6 +370,23 @@ For a real-app film the owner calls unpolished. Follow `references/polish-review
 4. "Bring me product bugs as decisions, keep the shot or fix and re-take, with your
    recommendation. Do not repaint them, and do not put review marks on the frames."
 
+## Recipe K. Add a beat to an approved film, in every format
+
+For a new scene inside a film the owner already approved. Follow
+`references/change-an-approved-film.md`.
+
+1. "Add a [number]-bar beat after [scene] showing [action]. Same track, same in-point. Plan
+   it first: list every later scene start and hit with its new time, the track's onset
+   strength at each, and where the track's biggest onsets now fall. Derive seconds from
+   the measured bar, and tell me any approved scene whose length changes."
+2. "For each format, name the frame where the action and its result are both visible. Tell
+   me the settled time on the final result before you build."
+3. "Check free disk first. Reuse only chunks whose complete inputs, assets included, hash
+   the same; re-render all others. The gate run must exit non-zero on any FAIL."
+4. "Review every format's candidate encode, then stop. I will listen before any rebuild."
+5. After listening: "Fix [list] in one rebuild." The rebuild is a new candidate: gates,
+   review and your approval again. Publishing is a separate approval.
+
 ## Short replies that move things along
 
 | When Claude asks | You can answer |

@@ -38,6 +38,12 @@ music. Every product screen is a real render of the shipped app with demo data; 
 its brand, footage and the customer logos in it are not covered by this repo's MIT
 licence.
 
+## Never made a video before?
+
+**[Start here: your first launch film, explained very simply](plugins/product-film/skills/product-film/references/first-film-for-beginners.md)**.
+Ten small steps, what to type at each one, what Claude does and what you check, with a
+real 90 second Design editor launch film as the example.
+
 ## Who it is for
 
 - Founders and marketers who want a launch or landing-page film without a studio.
@@ -93,6 +99,7 @@ Or copy a starting prompt into Claude Code and edit it:
 | Re-render after a release | "The approvals screen changed. Recapture only that scene from the new build, re-render, and re-run every check." |
 | Pre-launch, nothing to run yet | "Use our design-file exports for the screens (never AI-generated UI), label them Preview, and keep every claim on the roadmap wording." |
 | Ads from an approved film | "From the approved hero, make a 15 s and a 6 s cut and a 9:16 version, ending on the call to action." |
+| A new scene in an approved film | "Add a 4-bar scene (about 10 s) after Open showing someone editing a design. Same track. Re-measure every later hit on the track, and show the result inside the crop in every format." |
 
 ## What you get
 
@@ -255,6 +262,7 @@ references, so Claude can rebuild it for your film.
 - [Editing real footage: talking-head reels and recuts of an editor's video](plugins/product-film/skills/product-film/references/footage-edit.md)
 - [UI in the room: compositing product UI behind a speaker, and making it move](plugins/product-film/skills/product-film/references/in-scene-motion.md)
 - [Polish review: when gates pass but the screens look cut](plugins/product-film/skills/product-film/references/polish-review.md)
+- [Changing an approved film: a new beat, four formats, the music still on time](plugins/product-film/skills/product-film/references/change-an-approved-film.md)
 - [Case study](plugins/product-film/skills/product-film/references/case-study.md) and the
   [changelog](CHANGELOG.md)
 

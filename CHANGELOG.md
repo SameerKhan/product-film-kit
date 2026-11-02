@@ -2,6 +2,23 @@
 
 Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
+## 1.6.0 (2026-11-02)
+
+- New `references/first-film-for-beginners.md`: the whole job in very simple words, ten
+  steps with what to type, what Claude does and what to check, using a real Design editor
+  launch film as the example.
+- New `references/change-an-approved-film.md`, from adding a 9.6 s beat to an approved
+  79 s film in four formats: every later hit re-measured on the track's onsets (the final
+  hit slid onto a weak onset while every gate passed), never rounding the bar, time ramps
+  for long real takes, payoffs that must happen inside each narrow crop, an owner colour
+  rule recorded as a line-by-line waiver while the contrast gate keeps measuring, an
+  onset-strength gate to build (algorithm, starting numbers, planted defect), reused chunks that must hash their assets,
+  gate drivers that fail on FAIL, broken detectors, disk floors, and waiting for the owner
+  to listen before rebuilding. Docs only; the production's scripts are not ported.
+- `music.md`: never round the bar; gate hits on onset strength.
+- `recipes.md`: recipe K, add a beat to an approved film in every format.
+- README and SKILL.md point to both pages.
+
 ## 1.5.0 (2026-11-01)
 
 - New `references/polish-review.md`, from a 79 s feature launch film that passed its gates
