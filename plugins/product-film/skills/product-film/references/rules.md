@@ -134,6 +134,24 @@
 - **Separate the owner's rulings from the agent's in the ledger.** A builder recorded the
   agent's cut as an owner ruling.
 
+## Rework after feedback (`rework-after-feedback.md`)
+- **OCR every take for a retired word.** It was removed from the main design but lingered
+  in a template in another scene, and that take had to be re-shot.
+- **Know what the AI feature really does.** In one production it wrote only the words, and
+  the product's templates made the weak layout. Check where the AI stops before scripting
+  or claiming anything.
+- **Finish the end design in the real editor, with real steps,** and end on a design a
+  customer would post. The first end design was unreadable at posting size.
+- **Stage assets by content hash.** Name-only staging into a frozen folder would have kept
+  stale pixels.
+- **Fix the frame, not the privacy regex.** A press ring over "at" and a tilted card both
+  read as handles.
+- **Label every exemption with who ruled, and keep exempt targets measured.** Four old open
+  items were wrongly marked as covered by a new ruling, and a payoff removed from a gate's
+  list was no longer measured at all.
+- **Never put code after a comment marker on the same line.** A comment inserted mid-line
+  silently disabled an animation, and a parser check passed it.
+
 ## Operations
 - **Never keep a production in a temporary directory.** A reboot wiped one; recovery
   needed a transcript replay and every approval hash to prove it.

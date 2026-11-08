@@ -2,6 +2,21 @@
 
 Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
+## 1.7.0 (2026-11-08)
+
+- New `references/rework-after-feedback.md`, from reworking an approved 91 s launch film in
+  four formats after the team's notes (an irrelevant motif, an end design too small to
+  post, an unknown word): turning notes into viewer problems, searching every take for a
+  retired word, what the product's AI feature really does, finishing the end design with
+  real editor steps, recorded AI replays and a hard spend limit, content-hash staging and
+  three baselines, four narrow-format traps, OCR false alarms fixed in the frame, gate
+  conflicts and exemptions labelled by who ruled, build-tool faults review caught, and the
+  approval, final-file and hand-off steps. Docs only; the production's scripts are not
+  ported.
+- `rules.md`: rules from the same production.
+- `recipes.md`: recipe L, rework an approved film after the team's notes.
+- README and SKILL.md point to the new page.
+
 ## 1.6.0 (2026-11-02)
 
 - New `references/first-film-for-beginners.md`: the whole job in very simple words, ten

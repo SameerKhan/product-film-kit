@@ -387,6 +387,29 @@ For a new scene inside a film the owner already approved. Follow
 5. After listening: "Fix [list] in one rebuild." The rebuild is a new candidate: gates,
    review and your approval again. Publishing is a separate approval.
 
+## Recipe L. Rework an approved film after the team's notes
+
+For an approved film the team has watched and sent notes on. Follow
+`references/rework-after-feedback.md`.
+
+1. "Here are the team's notes: [notes]. For each one, tell me what the viewer loses, the
+   fix, and the check that would have caught it. OCR every take for any word we are
+   retiring, not just the scenes the notes name."
+2. "If an AI feature makes the design, tell me exactly what it does and what the templates
+   do. Finish the end design with real steps in the real editor, show me stills at the smallest
+   width it appears in each format (the display sizes that matter are [sizes]), and stop
+   for my rulings."
+3. "Put a hard limit on AI spend: [counts and dollars]. Stage assets by content hash,
+   freeze the sources once when composition ends, and check that unchanged list before
+   each format renders."
+4. "Build, gate and review all formats. List every remaining failure as carried or new,
+   and give me each open question with your recommendation."
+5. After watching: "Approved, and on the open items: [your answer to each]." Claude checks
+   that every remaining failure now has a ruling, checks the hashes, renames to the final
+   names and records the sources again. Then: "File a ticket for [team] (or, if no tracker is
+   connected, write the ticket text for me to paste) with the films, what's real and what
+   isn't, and ask for approval to post." Publishing is a separate approval.
+
 ## Short replies that move things along
 
 | When Claude asks | You can answer |

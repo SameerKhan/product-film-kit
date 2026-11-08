@@ -98,7 +98,8 @@ above still apply. **Product UI in the room, behind the speaker, built from real
 screenshots that move?** Follow `references/in-scene-motion.md` (recipe I). **Gates pass
 but screens look cut or unpolished?** Follow `references/polish-review.md` (recipe J).
 **Adding a beat to an approved film, or making its other formats?** Follow
-`references/change-an-approved-film.md` (recipe K). **New to all this?** Start with
+`references/change-an-approved-film.md` (recipe K). **The team watched an approved film
+and sent notes?** Follow `references/rework-after-feedback.md` (recipe L). **New to all this?** Start with
 `references/first-film-for-beginners.md`.
 
 ## Files
@@ -121,6 +122,7 @@ but screens look cut or unpolished?** Follow `references/polish-review.md` (reci
 - `references/in-scene-motion.md`: UI composited behind a speaker (person matte) and moving like a modern explainer: parts, clean bases, one true click, motion gates, recovery lessons
 - `references/polish-review.md`: full-size frame review of each candidate, gates that hide faults, polish and lifeless gates, cursor and transition faults, product faults as owner decisions, no review marks on frames
 - `references/change-an-approved-film.md`: inserting a beat (every later hit re-measured on track onsets), time ramps, payoffs inside narrow crops, owner colour rules against contrast gates, safe chunk reuse and gate drivers
+- `references/rework-after-feedback.md`: reworking an approved film after the team's notes (search every take for a retired word, what the AI feature really does, finishing the design in the real editor, content-hash staging, narrow-format and OCR traps, gate conflicts, approval and hand-off for posting)
 - `references/case-study.md`: the production this was distilled from
 - `scripts/`: `claims_gate.py`, `music_map.py`, `mix.py`, `reading_rule.py`, `ocr.swift`,
   `ocr_gate.py`, `rename.py`, `fetch.sh`, `render.sh`, `capture/harness.mjs`
