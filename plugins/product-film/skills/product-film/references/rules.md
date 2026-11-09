@@ -151,6 +151,14 @@
   list was no longer measured at all.
 - **Never put code after a comment marker on the same line.** A comment inserted mid-line
   silently disabled an animation, and a parser check passed it.
+- **Every size shown is a real export from the product,** checked against a manifest of
+  hashes. A size fan cut from one screenshot showed cropping, not the product.
+- **Measure lockups on a rendered still.** Correct-looking CSS left a feature name 13 px
+  off the wordmark's baseline and 22 px off centre.
+- **Check every format, not the one you changed.** A narrow-only layout branch lost a
+  card's entrance, and the card never appeared there.
+- **Read expected hashes from this round's baseline (2),** never from a constant embedded
+  in the script or from the live file. A hash left over from the last round failed a capture for no real reason.
 
 ## Operations
 - **Never keep a production in a temporary directory.** A reboot wiped one; recovery

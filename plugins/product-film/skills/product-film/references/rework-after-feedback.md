@@ -195,3 +195,57 @@ it failing on a planted defect (`qa-gates.md`) before trusting it.
   back to confirm it worked. In this production's tracker, assignees were notified and a
   name typed into the description was not; check how yours behaves.
 - Publishing waits for the posting team's approval and the owner's separate yes.
+
+## 9. The second round of notes
+
+The posting team watched the reworked film and sent a second, shorter set of notes. The
+fixes were small, but a three-model review of that round still found real faults. Most
+are new here; the items that name an earlier rule (section 7, the claim registry, the
+exit-status rule) add only the new evidence.
+
+- **Show the product's real output for every size, never crops of one screenshot.** A scene
+  promising "every post size" was built by cropping one screenshot into eight shapes. That
+  shows a picture being cut, not the product resizing a design. Export each size from the
+  real editor and write a manifest: the hash of the approved design the exports were made
+  from, then one row per size with its id and file hash. Freeze the list of size ids the
+  scene promises. The build refuses to run if the manifest's ids differ from that frozen
+  list, if any export's recomputed hash differs from its row, or if the design hash
+  differs from the approved final's entry in baseline (2), the owner-approved files
+  (section 3).
+- **Measure a lockup in the rendered frame, not in the code.** A feature name set next to
+  the brand wordmark sat 13 px above the wordmark's baseline, its letters were visibly
+  smaller, and the pair was off centre by 22 px. The CSS numbers all looked right. Measure
+  the ink of the wordmark image (where its baseline and x-height fall), size and place the
+  text from those measurements, then check a rendered still: baseline within 1 px, centre
+  within 2 px.
+- **A layout branch for one format can lose the animation.** A new narrow layout for one
+  card was added as a separate branch of the build, and that branch never got the card's
+  entrance step, so the card stayed invisible in the narrow formats only. In every format,
+  not just the one you changed, check that each element scheduled for that format becomes
+  visible inside its scheduled window (the rendered-events check in `qa-gates.md`, run per
+  format).
+- **Expected hashes carried from the previous round go stale quietly.** A capture checked
+  the design it started from against the previous round's final hash, a constant left in
+  the script, and failed for a reason that had nothing to do with the design. Read the
+  expected hash from baseline (2) (section 3), never from a constant in
+  the script and never from the live file being checked, which would bless any change.
+- **Section 7's line-insertion trap came back a third time** (text inserted into the
+  middle of a line swallowed the assignment after it). New evidence: after fixing it,
+  rebuild the timeline and compare it byte for byte with the one that was rendered; that
+  proved the fix changed nothing else.
+- **Copy the owner asks for still needs its registry entry, at once.** The owner asked
+  for a shorter end line. Both outside reviewers flagged it, because the claim registry
+  (`copy-and-claims.md`) had no entry for it. Add the entry when the line goes in:
+  `owner-approved` with the date, and the page sentence it rests on, so a reviewer can check the
+  shorter line does not widen the claim.
+- **When review calls a text card or a run of screens lifeless.** Here a card holding a
+  line of text for nearly 2 s read as a frozen frame; a slow drift of about 1.5 % of the
+  frame height over its time on screen was enough. Three product screens in a row read as
+  a slideshow; merging two related beats into one shot fixed the rhythm without cutting
+  content. These are remedies for what review flagged, not rules for every card.
+- **A review leg that falls back must say so.** One reviewer ran on a backup model because
+  its main model was out of quota. Name the model that actually ran in the report, so a
+  reader does not over-trust the coverage.
+- **The exit-status rule (`change-an-approved-film.md`) was broken again.** The runner
+  printed every failure and exited 0. New evidence: plant a missing candidate and check
+  the exit status itself, since reading the printed report hid the fault.

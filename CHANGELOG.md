@@ -2,6 +2,16 @@
 
 Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
+## 1.8.0 (2026-11-09)
+
+- `rework-after-feedback.md`: new section 9, the second round of notes on the same film:
+  real per-size exports checked against a hash manifest instead of crops of one
+  screenshot, lockups measured on a rendered still, layout branches that lose an
+  entrance in one format, stale fingerprints from the previous round, inserting after a
+  line rather than into it, claims entries for owner-requested copy, statement cards that
+  drift, naming a reviewer's fallback model, and proving the gate runner's exit status.
+- `rules.md`: four rules from the same round.
+
 ## 1.7.0 (2026-11-08)
 
 - New `references/rework-after-feedback.md`, from reworking an approved 91 s launch film in
