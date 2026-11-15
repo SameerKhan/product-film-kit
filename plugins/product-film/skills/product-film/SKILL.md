@@ -99,7 +99,9 @@ screenshots that move?** Follow `references/in-scene-motion.md` (recipe I). **Ga
 but screens look cut or unpolished?** Follow `references/polish-review.md` (recipe J).
 **Adding a beat to an approved film, or making its other formats?** Follow
 `references/change-an-approved-film.md` (recipe K). **The team watched an approved film
-and sent notes?** Follow `references/rework-after-feedback.md` (recipe L). **New to all this?** Start with
+and sent notes?** Follow `references/rework-after-feedback.md` (recipe L). **A teammate made
+their own cut and you want it on the real product?** Follow
+`references/rebuild-on-a-teammates-cut.md` (recipe M). **New to all this?** Start with
 `references/first-film-for-beginners.md`.
 
 ## Files
@@ -123,6 +125,7 @@ and sent notes?** Follow `references/rework-after-feedback.md` (recipe L). **New
 - `references/polish-review.md`: full-size frame review of each candidate, gates that hide faults, polish and lifeless gates, cursor and transition faults, product faults as owner decisions, no review marks on frames
 - `references/change-an-approved-film.md`: inserting a beat (every later hit re-measured on track onsets), time ramps, payoffs inside narrow crops, owner colour rules against contrast gates, safe chunk reuse and gate drivers
 - `references/rework-after-feedback.md`: reworking an approved film after the team's notes (search every take for a retired word, what the AI feature really does, finishing the design in the real editor, content-hash staging, narrow-format and OCR traps, gate conflicts, approval and hand-off for posting)
+- `references/rebuild-on-a-teammates-cut.md`: rebuilding a teammate's cut on real product output (what to take and what to rebuild, design-led scenes, every asset the product loads, no hand-made designs under an AI headline, shareable ending posts, pacing a result, in-house sound, one review page, final files for upload)
 - `references/case-study.md`: the production this was distilled from
 - `scripts/`: `claims_gate.py`, `music_map.py`, `mix.py`, `reading_rule.py`, `ocr.swift`,
   `ocr_gate.py`, `rename.py`, `fetch.sh`, `render.sh`, `capture/harness.mjs`

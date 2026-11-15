@@ -264,6 +264,7 @@ references, so Claude can rebuild it for your film.
 - [Polish review: when gates pass but the screens look cut](plugins/product-film/skills/product-film/references/polish-review.md)
 - [Changing an approved film: a new beat, four formats, the music still on time](plugins/product-film/skills/product-film/references/change-an-approved-film.md)
 - [Reworking an approved film after the team watches it](plugins/product-film/skills/product-film/references/rework-after-feedback.md)
+- [Rebuilding a film on a teammate's cut, with real product output](plugins/product-film/skills/product-film/references/rebuild-on-a-teammates-cut.md)
 - [Case study](plugins/product-film/skills/product-film/references/case-study.md) and the
   [changelog](CHANGELOG.md)
 

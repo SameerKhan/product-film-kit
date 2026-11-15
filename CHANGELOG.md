@@ -2,6 +2,20 @@
 
 Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
+## 1.9.0 (2026-11-15)
+
+- New `references/rebuild-on-a-teammates-cut.md`, from rebuilding a designer's own 60 s
+  cut of a launch film on real product output, 13 versions in four formats: what to take
+  from their project and what to rebuild, design-led scenes instead of dense screens,
+  answering every asset request in the capture harness, holding the film for a product
+  fix rather than showing hand-made designs under an AI-feature headline, ending posts a
+  brand would share, pacing a before, action and result, sound effects made in-house with
+  measured headroom, narrow-format traps, one review page for everyone, standard-range
+  final files, and tooling traps. Docs only; the production's scripts are not ported.
+- `rules.md`: six rules from the same production.
+- `recipes.md`: recipe M, rebuild a teammate's cut on the real product.
+- README and SKILL.md point to the new page.
+
 ## 1.8.0 (2026-11-09)
 
 - `rework-after-feedback.md`: new section 9, the second round of notes on the same film:
