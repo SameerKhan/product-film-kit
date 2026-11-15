@@ -22,26 +22,30 @@ it failing on a planted defect (`qa-gates.md`) before trusting it.
 - **Their headlines are new copy until the owner approves them.** Every line goes through
   the claims check like any other: it is on the landing page, or it gets a dated,
   owner-approved entry in the copy list (`copy-and-claims.md`). Two of their lines were
-  in neither and stayed open questions for the owner to the end.
+  in neither and were still open questions for the owner when the files were handed
+  over. That is a third disclosed gap: a line with no approval fails the claims gate, so
+  the owner approves it in writing or it comes out before the film is published.
 - **Rebuild every product picture.** Their product screens were redrawn in the motion tool
   ("UI rebuilt at 1.6 to 2x"). Redrawn screens showed a control the product does not have
   (a spelling check). Every picture in the new film is a recording or an export from the
   real product.
 - **Check their music edit twice: the licence, then the source.** First, the licence must
   allow cutting and rejoining the track (`music.md`); a no-remix licence rules their edit
-  out whatever it sounds like. Second, prove the edit was cut from your licensed file.
-  Here their project used the same source file (identical hash), and their edit list
-  named the stretches used. If you only have a rendered edit, decode both to the same
-  rate and channels, align each stretch by cross-correlation and require a near-perfect
-  match; a re-encoded copy will not match sample for sample. If either check fails, cut
-  your own from the licensed file.
+  out whatever it sounds like. Second, the edit must come from your licensed file. That
+  is shown by records, not by ear: their project holds the same source file as yours
+  (identical hash) and an edit list naming the stretches used. Here it did. Comparing two
+  renders can only show that they sound alike, never where a file came from. Without the
+  source file and the edit list, cut your own edit from the licensed file to their
+  timings.
 - **Do not reuse sound effects that came bundled with their tool** unless you can show the
   licence. Section 7 builds replacements.
-- **Never run a teammate's project scripts, and do not read everything in it.** List the
-  folder first. Skip links that point outside it, credential and environment files, and
-  anything that looks like customer data; read only the spec, the timings and the assets
-  the film needs, and keep private paths out of your notes. The archive had paths from
-  another operating system and scripts nobody here had reviewed.
+- **Never run a teammate's project scripts, and read only what the owner cleared.** You
+  cannot tell from a file listing what is private, and opening a file to find out is
+  already too late. Ask the owner (or the teammate) for a clean copy that holds only the
+  spec, the timings and the assets the film needs, or for a written list of the files you
+  may open. Do not follow links that point outside it, and keep private paths and
+  people's names out of your notes. The archive here had paths from another operating
+  system and scripts nobody had reviewed.
 - **Ask for the project folder, not the rendered page.** The shared preview page did not
   allow downloads, and timings read off a video are guesses.
 
@@ -88,6 +92,7 @@ rejected it in one line: it looked machine-made. Their reasons, and the fixes:
   film: the line became "Every size", as a dated owner-approved entry in the copy list.
   A font count was true only after a pending change shipped, so its entry carried a
   condition, and the release checklist said: check it shipped, else use the old number.
+  It shipped, and that was checked, before the final files were handed over.
 
 ## 4. Never put hand-made designs under an AI-feature headline
 
@@ -98,16 +103,18 @@ feature really made from the film's photos were not good enough to post.
   claim the product cannot keep. Tell the owner, with the real outputs side by side.
 - **Give the owner the real choices:** cut the scene, change the headline to something
   the product does do, or hold the film for a product fix. The owner chose to hold.
-- **File the product fault with the evidence:** the input caption and photos, the three
-  exports, the build they came from, and what a postable result would need.
+- **Write up the product fault with the evidence:** the input caption and photos, the
+  three exports, the build they came from, and what a postable result would need. Draft
+  the ticket and file it only when the owner agrees (`polish-review.md`).
 - **When the fix ships, prove which build you recorded.** Record the commit you built
   from, and tie it to what is deployed with the release record or deploy manifest. Where
   the site serves the built asset under a content-hashed name, fetching it and matching
   the hash is a good second check; it is not possible on every site.
 - **The owner decides which outputs are good enough, from stills.** Show every output at
-  the size it appears in the film and record the ruling for each. Two of the three new
-  layouts were used. The third was weak and is not in the film; the owner and the team
-  were told so.
+  the size it appears in the film and record the ruling for each. The fixed feature
+  offered three new layouts. Two were good and one was weak. The scene shows three posts
+  made from three photos, using only the two good layouts (one of them twice); the owner
+  and the team were told the weak one was left out.
 - **The words must be the feature's real words too.** In this production the layouts were
   the product's real output, but the words on them came from a fixed test reply, because
   the AI text step was not run live. The review page said so in plain words and the owner
@@ -129,10 +136,11 @@ Background removal and retouch each end on a finished post. It took three rounds
 
 What made round 3 work:
 
-- **Look at current posts of that kind first, and write down what they share.** Speaker
-  posts: the cut-out person anchored at the bottom with headroom, one bold shape behind,
-  a large display headline. Beauty posts: warm neutrals, a large light serif, the portrait
-  in a soft frame. Take the layout ideas, never the posts.
+- **Look at current posts of that kind first, and write down what they share.** The owner
+  names the platform and the kind of business to look at; a dozen recent posts is
+  enough. Speaker posts: the cut-out person anchored at the bottom with headroom, one
+  bold shape behind, a large display headline. Beauty posts: warm neutrals, a large light
+  serif, the portrait in a soft frame. Take the layout ideas, never the posts.
 - **Make the design with real steps in the real editor** (`rework-after-feedback.md`,
   section 2), so the film never shows a result the product cannot produce. This
   production cut a corner here: the two layouts were written as files in the product's
@@ -158,14 +166,16 @@ passed.
   now 3.0 s and 3.4 s.
 - **Do not play a recording much faster than 1.6 times real speed** when the viewer must
   follow it. One ran at 2.4 times.
-- **Hold the finished result for about a second** before the cut.
+- **Hold the finished result for most of a second** before the cut; here 0.8 s or more.
 - **These three numbers are one owner's rulings on one film, not constants.** Use them as
   starting floors (3.0 s, 1.6 times, 0.8 s), have the owner confirm or change them after
   watching, and record the confirmed values as the gate's thresholds. The reading rule
   (`qa-gates.md`) still applies on top.
-- **Pay for the time from the longest earlier scenes, a little from each,** and leave
-  every later scene start, the ending and the music's hits where they were. Five scenes
-  gave 0.4 to 1.2 s each; the scene that gave most is the one to re-watch.
+- **Pay for the time from the longest earlier scenes, a little from each.** Every scene
+  after the lengthened ones, the ending and the music's later hits stay where they were.
+  The shortened scenes and the ones between them do move: re-measure each of their new
+  starts against the track's onsets (`change-an-approved-film.md`). Five scenes gave 0.4
+  to 1.2 s each; the scene that gave most is the one to re-watch.
 - **If earlier scenes cannot give enough time, stop and ask.** The choices are to cut a
   scene, shorten another, or move later scenes and re-measure every hit against the
   track (`change-an-approved-film.md`). The owner picks.
@@ -184,17 +194,21 @@ passed.
   build, and name the cached file by the recipe's hash.
 - **Effects carry any stretch where the music is silent,** so they play louder there and
   quieter under the track.
-- **Pad the mix to the film length; do not trim after mixing.** A trim placed after the
-  mix cut the sound short. Pad every input to the full length and reset timestamps after
-  the mix.
+- **Reset timestamps before you trim the mix.** A trim placed straight after the mix cut
+  the sound short, because the mixed stream's timestamps did not start at zero. Pad every
+  input that is shorter than the film to the full length, mix, reset the timestamps, and
+  only then trim to the film's length so a long track cannot overrun the picture.
 - **Leave headroom before the lossy encode, and gate the encoded file, not the mix.** A
   mix limited close to full scale and encoded to AAC at 192k came out 2 to 5 dB over its
   limit, and adding a second limiter made it worse. Lossy encoding adds overshoot at any
-  bitrate; a higher bitrate only made it smaller here. Keep the kit's order (`qa-gates.md`, the loudness row):
-  normalise loudness to the target first, keep a true-peak margin of a few dB before the
-  encode, then measure integrated loudness and true peak on the encoded file and fail the
-  build if either is off target. This production reached -14.0 LUFS with peaks at
-  -2.9 dBFS after encoding at 256k.
+  bitrate; a higher bitrate only made it smaller here. Keep the kit's order (`qa-gates.md`,
+  the loudness row): normalise loudness to the target first, keep a true-peak margin of a
+  few dB before the encode, then measure integrated loudness and true peak on the encoded
+  file and fail the build if either is off target. The masters measured -14.0 LUFS and a
+  true peak of -2.9 dBTP after encoding at 256k.
+- **Every other encode needs the same check.** A small web copy of the same film, with
+  its sound re-encoded at about 160k, measured +0.8 dBTP. Copy the master's sound stream
+  into web copies instead of encoding it again, or gate each copy.
 
 ## 8. Narrow formats
 
@@ -220,7 +234,8 @@ passed.
 - **When you message a reviewer, name the version to skip.** They may still be on the one
   before last.
 - **Know who can open the page.** A page of an unreleased film should be limited to named
-  reviewers. If the owner chooses to share it by link, record that choice, keep anything
+  reviewers. Test it: open the link in a private browser window with no sign-in; it
+  must refuse. If the owner chooses to share it by link, record that choice, keep anything
   private off the page, and remember it updates for everyone the moment you publish:
   decide whether a reviewer should see a version before you publish it, not after.
 - **State honest limits on the page:** what is stubbed, which output was left out and why,
@@ -231,13 +246,19 @@ passed.
 ## 10. Final files for upload
 
 - **Check the colour range of the masters.** Frames rendered as JPEG and encoded directly
-  made full-range video, which some platforms show washed out. Convert the pixels, do not
-  just relabel them: scale from full to limited range in the encode, and set the range,
-  matrix, primaries and transfer tags to match (4:2:0, fast start, sound copied
-  untouched). Setting the tags alone leaves full-range pixels marked as limited. Then
-  verify: the stream reports limited range, and frames taken at several points (a dark
-  scene, a bright one, a saturated one) match the master within a similarity threshold
-  you record. Better still, fix the range in the render so no second encode is needed.
+  made full-range video. A player that ignores the full-range flag shows it with the
+  wrong contrast: crushed blacks and clipped whites. Convert the pixels from full to
+  limited range in the encode (8-bit 4:2:0, fast start, sound copied untouched). Then verify
+  the pixels and all four tags, because both can be wrong on their own: the luma of a
+  pure white frame reads 235 in 8-bit video, not 255; range reads limited; and matrix, primaries and
+  transfer all read BT.709. In one encoder version the primaries and transfer options
+  were silently not written when they followed a scale filter; setting them in the
+  filter chain or with a bitstream filter worked. Compare frames from a dark, a bright
+  and a saturated scene against the master, decoding both to RGB, within a similarity
+  threshold you record. Better still, fix the range in the render so no second encode is
+  needed.
+- **Converted delivery files are new bytes.** Run the gates on them and have the owner
+  watch and approve them, not just the candidate they came from.
 - **Name delivery files for the person uploading,** not for the build, and say which
   format goes to which platform.
 - **Restate every open release gate when you hand the files over,** even if the owner has
@@ -256,14 +277,15 @@ passed.
   when you start something, check the id still belongs to what you started (start time,
   command), and stop only that. Never match by name or folder alone; that can hit another
   session's work.
-- **A wait loop that searches for a script's name matches itself.** Wait on the recorded
-  process id.
+- **A wait loop that searches for a script's name matches itself.** Poll the recorded
+  process id instead (a shell's `wait` only works on its own children), and check each
+  time that the id still belongs to the process you started.
 - **Scratch folders are wiped between sessions.** Keep the production and the review page
   source in the production folder, not in scratch. Approvals and an independent backup
   still live outside the build sandbox (`pipeline-ops.md`).
-- **Shells differ.** In one common shell `$name:flags` applies a modifier to the variable
-  and loop variables are not split on spaces. Write `${name}` and do list handling in a
-  script language.
+- **Shells differ.** In one common shell `$name:flags` applies a modifier to the variable,
+  and an unquoted variable holding several words is not split into words. Write `${name}`
+  and do list handling in a script language.
 - **Bind the checks to the files they checked.** The render writes a manifest of each
   candidate's hash and its inputs' hashes; the checks refuse a candidate that does not
   match it, and exit non-zero on any failure.

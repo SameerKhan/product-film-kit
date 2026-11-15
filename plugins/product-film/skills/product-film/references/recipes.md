@@ -415,12 +415,12 @@ For an approved film the team has watched and sent notes on. Follow
 For when someone on the team made their own version and you want its structure with real
 product pictures. Follow `references/rebuild-on-a-teammates-cut.md`.
 
-1. "Here is [name]'s project folder: [path]. Do not run anything in it. List what is in
-   it first; skip credential and environment files, links that point outside it and
-   anything that looks like customer data. From the rest, list the scene start times, the
-   headlines, the visual rules and the music edit. Tell me which of their product screens
-   are redrawn, which headlines are not in our approved copy, and whether the track's
-   licence allows their edit and the edit comes from our licensed file."
+1. "I have put a clean copy of our designer's project in [folder]: only the spec, the
+   timings and the assets, nothing private. Do not run anything in it and do not follow
+   links out of it. List the scene start times, the headlines, the visual rules and the
+   music edit. Tell me which of their product screens are redrawn, which headlines are
+   not in our approved copy, and whether the track's licence allows their edit and the
+   project shows the edit was cut from our licensed file."
 2. "Rebuild it on real recordings and exports from [build]. Show results large on simple
    cards; show a control only when the press is the point. One sample business for the
    story post, different ones everywhere else. Log every asset the product asks the
@@ -428,22 +428,23 @@ product pictures. Follow `references/rebuild-on-a-teammates-cut.md`.
 3. "For any scene whose headline names an AI feature, show me the feature's real outputs
    first. If they are not good enough to post, stop and give me the choices: cut the
    scene, change the headline, or hold for a product fix."
-4. "For each scene that ends on a finished post, look at how current posts of that kind
-   are laid out, make the post in the product's own format, export it from the product,
-   and tell me exactly how it was made."
+4. "For each scene that ends on a finished post, look at how current [kind of business]
+   posts on [platform] are laid out, then build the post with real steps in the real
+   editor, export it from the product, and tell me exactly how it was made."
 5. "Build all formats, run the checks, and list for every result scene its length, the
-   recording's speed and how long the result holds. Put the cut on the review page at
-   [link], which only [reviewers] can open, with a dated note, new file names, and what
-   is stubbed or left out."
+   recording's speed and how long the result holds. Show me the candidate and stop."
+   After you have watched it: "Put it on the review page at [link]. Only [reviewers] should be
+   able to open it: after publishing, open the link signed out and tell me what you see.
+   Add a dated note, new file names, and what is stubbed or left out."
 6. After watching: "Scenes [list] are too fast." Claude lengthens them, pays from the
    longest earlier scenes, and keeps the ending and the music's hits where they were. If
    earlier scenes cannot give enough time, Claude stops and gives you the choices. The
    result is a new candidate: all formats, gates, review and your approval again.
-7. After you approve a candidate: "Give me the final files for upload." Claude converts
-   that approved candidate to standard-range files named by format, shows you the check
-   of each against the candidate, and says which platform each is for. Watch them and
-   approve the delivery files; their hashes are recorded. Claude restates every open
-   release gate. Publishing is a separate approval.
+7. After you approve a candidate: "Give me the final files for upload." If the approved
+   files are already standard range, Claude renames them by format. If they need
+   converting, the converted files are new bytes: Claude runs the gates on them and you
+   watch and approve them. Claude says which platform each file is for and restates every
+   open release gate. Publishing is a separate approval.
 
 ## Short replies that move things along
 

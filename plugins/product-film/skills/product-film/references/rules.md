@@ -159,6 +159,8 @@
   card's entrance, and the card never appeared there.
 - **Read expected hashes from this round's baseline (2),** never from a constant embedded
   in the script or from the live file. A hash left over from the last round failed a capture for no real reason.
+
+## Rebuilding on a teammate's cut (`rebuild-on-a-teammates-cut.md`)
 - **Never show hand-made designs under an AI-feature headline.** The feature's real
   output was not postable; the film was held for a product fix, then re-recorded on the
   fixed build, using only the outputs that cleared the bar.
@@ -169,13 +171,15 @@
   rejected twice; study current posts of that kind, then make the post in the real editor
   and export it from the product.
 - **Give a before, an action and a result enough time, and record the owner's numbers as
-  gate thresholds** (here 3 s a scene, 1.6 times at most for a recording, about a second
+  gate thresholds** (here 3 s a scene, 1.6 times at most for a recording, 0.8 s or more
   on the result). Two 1.8 s scenes passed every check and were unreadable.
 - **Give every version's web copies a new file name, and name the version a reviewer
   should skip.** Reused names showed cached video, and a reviewer was two versions behind.
 - **Deliver standard-range video, converted and tagged, from an approved candidate.**
-  Masters encoded straight from JPEG frames were full range, which some platforms show
-  washed out.
+  Masters encoded straight from JPEG frames were full range, which some players show
+  with crushed blacks and clipped whites. Check the pixels and all four colour tags.
+- **Gate the sound of every encode, web copies included.** A small copy with re-encoded
+  sound peaked at +0.8 dBTP while its master was at -2.9.
 
 ## Operations
 - **Never keep a production in a temporary directory.** A reboot wiped one; recovery

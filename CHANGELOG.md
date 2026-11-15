@@ -2,6 +2,19 @@
 
 Plugin versions live in `plugins/product-film/.claude-plugin/plugin.json`.
 
+## 1.9.1 (2026-11-16)
+
+- `rebuild-on-a-teammates-cut.md`, recipe M and `rules.md`, after a three-model review of
+  1.9.0: recipe M now requires real editor steps for an ending post, shows the candidate
+  to the owner before it goes on a shared page, reads only a clean copy of a teammate's
+  project, and treats converted delivery files as new bytes to gate and approve. The
+  page states music provenance as records rather than similarity, drafts a product
+  ticket for the owner instead of filing it, corrects the colour-range failure (crushed
+  blacks, not washed out) and checks pixels plus all four colour tags, resets timestamps
+  before trimming a mix, reports true peak in dBTP, gates the sound of web copies, and
+  lists a third disclosed gap (two headlines without a recorded approval). The six rules
+  get their own heading and a seventh on web-copy sound.
+
 ## 1.9.0 (2026-11-15)
 
 - New `references/rebuild-on-a-teammates-cut.md`, from rebuilding a designer's own 60 s
